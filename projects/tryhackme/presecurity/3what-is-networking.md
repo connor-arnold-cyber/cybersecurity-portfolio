@@ -174,7 +174,7 @@ Why this matters:
 ## Proof of Completion
 
 - Platform: TryHackMe
-- Room: Defensive Security Intro
+- Room: What Is Networking
 - Completed: 04/23/2026
 
 ![Completion Proof](images/what-is-networking-complete.png)
