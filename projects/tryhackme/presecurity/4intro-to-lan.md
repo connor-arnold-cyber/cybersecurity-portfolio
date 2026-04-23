@@ -159,4 +159,10 @@ Router:
 
 
 
+## Proof of Completion
 
+- Platform: TryHackMe
+- Room: Intro To LAN
+- Completed: 04/23/2026
+
+![Completion Proof](images/intro-to-lan-complete.png)
