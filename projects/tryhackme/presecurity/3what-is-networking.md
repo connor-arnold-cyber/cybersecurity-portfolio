@@ -169,3 +169,12 @@ Why this matters:
 - Ping = basic way to test connectivity
 - Attackers abuse networks, not just devices
 
+
+
+## Proof of Completion
+
+- Platform: TryHackMe
+- Room: Defensive Security Intro
+- Completed: 04/20/2026
+
+![Completion Proof](images/what-is-networking-complete.png)
