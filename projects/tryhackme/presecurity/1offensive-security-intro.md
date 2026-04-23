@@ -14,7 +14,7 @@ Goal:
 
 Enumeration = systematically probing a target to find:
 - Hidden directories
-- Endpoints
+- Endpoints (any device where communication starts or ends on a network/anything that sends or receives data)
 - Users
 - Services
 
