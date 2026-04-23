@@ -65,3 +65,5 @@ Proper term:
 - Hidden does NOT mean secure
 - Attackers actively search for hidden endpoints
 - Access control is critical
+
+![Gobuster Example Output](images/gobuster-example-output.png)
