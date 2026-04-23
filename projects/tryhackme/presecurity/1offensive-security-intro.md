@@ -67,3 +67,10 @@ Proper term:
 - Access control is critical
 
 ![Gobuster Example Output](images/gobuster-example-output.png)
+
+
+
+## Proof of Completion
+
+- Platform: TryHackMe
+- Room: Offensive Security Intro
