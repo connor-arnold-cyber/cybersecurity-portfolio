@@ -102,3 +102,13 @@ Analysis:
 - Prevention alone is not enough
 - Logs are everything in detection
 - Attackers always leave traces
+
+
+
+## Proof of Completion
+
+- Platform: TryHackMe
+- Room: Defensive Security Intro
+- Completed: 04/20/2026
+
+![Completion Proof](images/defensive-security-complete.png)
