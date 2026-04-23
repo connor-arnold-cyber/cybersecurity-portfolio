@@ -24,15 +24,15 @@ This helps map out the attack surface.
 
 ## Tool: Gobuster
 
-Used to brute-force directories on a website
+Used to brute-force (try everything until something works) directories on a website
 
 Example:
 gobuster -u http://fakebank.thm -w wordlist.txt dir
 
 Breakdown:
-- -u → target
-- -w → wordlist
-- dir → mode
+- -u → target (http://fakebank.thm)
+- -w → wordlist (appended to the end of the target url)
+- dir → mode (dir means it's searching for directories)
 
 ---
 
