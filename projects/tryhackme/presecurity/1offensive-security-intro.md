@@ -74,3 +74,6 @@ Proper term:
 
 - Platform: TryHackMe
 - Room: Offensive Security Intro
+- Completed: 04/20/2026
+
+![Completion Proof](images/offensive-security-complete.png)
