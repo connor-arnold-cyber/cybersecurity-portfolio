@@ -121,6 +121,9 @@ IP = Internet Protocol
 Example:
 192.168.1.1
 
+![ipv4 example](images/ipv4-structure.png)
+![ipv6 example](images/ipv6-structure.png)
+
 Types:
 - Private IP → inside network
 - Public IP → on the internet
