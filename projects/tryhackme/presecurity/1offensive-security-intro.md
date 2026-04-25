@@ -1,4 +1,4 @@
-# TryHackMe - Offensive Security Intro
+# Offensive Security Intro
 
 ## What I Learned
 
