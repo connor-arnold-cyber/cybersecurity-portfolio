@@ -1,4 +1,4 @@
-# OSI Model – Detailed Notes (Full Understanding Version)
+# OSI Model
 
 ---
 
@@ -206,3 +206,14 @@ Sends raw bits over medium.
   - DNS attacks → Layer 7  
 
 If you understand OSI, you understand **where an attack is happening and how to investigate it.**
+
+
+
+## Proof of Completion
+
+- Platform: TryHackMe
+- Room: OSI Model
+- Completed: 04/25/2026
+
+![Completion Proof](images/osi-model-complete.png)
+
