@@ -1,4 +1,4 @@
-# TryHackMe - Defensive Security Intro
+# Defensive Security Intro
 
 ## What I Learned
 
