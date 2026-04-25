@@ -1,4 +1,4 @@
-# Intro To LAN (Clean & Expanded Notes)
+# Intro To LAN
 
 ## 1. Subnetting
 
