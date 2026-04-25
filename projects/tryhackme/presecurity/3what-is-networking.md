@@ -1,4 +1,4 @@
-# TryHackMe - What is Networking
+# What is Networking
 
 ## What I Learned
 
