@@ -1,8 +1,8 @@
-# 📦 Packets, Frames, TCP, UDP, and Ports
+# Packets, Frames, TCP, UDP, and Ports
 
 ---
 
-## 🧱 Packets vs Frames
+## Packets vs Frames
 
 ### What They Are
 - Packets and frames are **small pieces of data**
@@ -23,7 +23,7 @@
 
 ---
 
-## 🔄 Encapsulation
+## Encapsulation
 
 - Data moves **down the layers**
 - Each layer adds a header
@@ -35,7 +35,7 @@
 
 ---
 
-## 📦 Why Packets Are Used
+## Why Packets Are Used
 
 - Data sent in **small chunks**
 - Reduces congestion
@@ -47,7 +47,7 @@
 
 ---
 
-## 🧾 Packet Structure (IP)
+## Packet Structure (IP)
 
 ### Important Fields
 
@@ -68,14 +68,14 @@
 
 ---
 
-## 🧠 Definitions
+## Definitions
 
 - With IP → **Packet**
 - Without IP → **Frame**
 
 ---
 
-# 🌐 UDP (User Datagram Protocol)
+# UDP (User Datagram Protocol)
 
 ## Core Concept
 
@@ -132,7 +132,7 @@
 
 ---
 
-# 🔐 TCP (Transmission Control Protocol)
+# TCP (Transmission Control Protocol)
 
 ## Core Concept
 
@@ -205,5 +205,7 @@
 
 ---
 
-## 🤝 Three-Way Handshake
+## Three-Way Handshake
+
+- SYN → SYN/ACK → ACK
 
