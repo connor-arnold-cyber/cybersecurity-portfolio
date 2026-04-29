@@ -27,7 +27,7 @@
 
 - Data moves **down the layers**
 - Each layer adds a header
-- Reverse process = **decapsulation**
+- Reverse process = **de-encapsulation**
 
 ### Key Rule
 - IP involved → **Packet**
