@@ -386,7 +386,7 @@ But:
 ## Proof of Completion
 
 - Platform: TryHackMe
-- Room: Packets & Frames
+- Room: Extending Your Network
 - Completed: 04/29/2026
 
-![Completion Proof](images/packets-&-frames-complete.png)
+![Completion Proof](images/extending-your-network-complete.png)
