@@ -294,3 +294,13 @@ Process:
 - Handshake = SYN → SYN/ACK → ACK
 - FIN = clean close
 - RST = forced close
+
+
+
+## Proof of Completion
+
+- Platform: TryHackMe
+- Room: Packets & Frames
+- Completed: 04/29/2026
+
+![Completion Proof](images/packets-&-frames-complete.png)
