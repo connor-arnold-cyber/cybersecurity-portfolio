@@ -5,39 +5,39 @@
 ## Packets vs Frames
 
 ### What They Are
-- Packets and frames are **small pieces of data**
+- Packets and frames are small pieces of data
 - Combined together → form a full message
 
 ### Layer Difference
-- **Packet (Layer 3 – Network)**
+- Packet (Layer 3 – Network)
   - Contains IP header + payload
-- **Frame (Layer 2 – Data Link)**
+- Frame (Layer 2 – Data Link)
   - Encapsulates packet
   - Adds MAC addresses
 
 ### Analogy
-- Frame = envelope  
-- Packet = letter inside  
-- Frame delivers packet  
-- Packet contains actual message  
+- Frame = envelope
+- Packet = letter inside
+- Frame delivers packet
+- Packet contains actual message
 
 ---
 
 ## Encapsulation
 
-- Data moves **down the layers**
+- Data moves down the layers
 - Each layer adds a header
-- Reverse process = **decapsulation**
+- Reverse process = decapsulation
 
 ### Key Rule
-- IP involved → **Packet**
-- MAC involved → **Frame**
+- IP involved → Packet
+- MAC involved → Frame
 
 ---
 
 ## Why Packets Are Used
 
-- Data sent in **small chunks**
+- Data sent in small chunks
 - Reduces congestion
 - Prevents bottlenecks
 
@@ -51,42 +51,42 @@
 
 ### Important Fields
 
-- **TTL (Time To Live)**
+- TTL (Time To Live)
   - Prevents infinite looping
   - Decreases each hop
   - Dropped at 0
 
-- **Checksum**
+- Checksum
   - Verifies integrity
   - Mismatch = corrupt data
 
-- **Source Address**
+- Source Address
   - Sender IP
 
-- **Destination Address**
+- Destination Address
   - Receiver IP
 
 ---
 
 ## Definitions
 
-- With IP → **Packet**
-- Without IP → **Frame**
+- With IP → Packet
+- Without IP → Frame
 
 ---
 
-# UDP (User Datagram Protocol)
+## UDP (User Datagram Protocol)
 
-## Core Concept
+### Core Concept
 
-- **Stateless**
+- Stateless
 - No connection required
 - No handshake
 - No acknowledgements
 
 ---
 
-## When UDP Is Used
+### When UDP Is Used
 
 - Video streaming
 - Voice calls
@@ -94,7 +94,7 @@
 
 ---
 
-## Advantages
+### Advantages
 
 - Fast
 - No connection setup
@@ -103,7 +103,7 @@
 
 ---
 
-## Disadvantages
+### Disadvantages
 
 - No guarantee of delivery
 - No error checking
@@ -112,7 +112,7 @@
 
 ---
 
-## UDP Structure
+### UDP Structure
 
 - TTL (L3)
 - Source IP (L3)
@@ -123,20 +123,11 @@
 
 ---
 
-## Key Facts
+## TCP (Transmission Control Protocol)
 
-- UDP = **User Datagram Protocol**
-- Connection type = **Stateless**
-- File transfer = **TCP**
-- Video call = **UDP**
+### Core Concept
 
----
-
-# TCP (Transmission Control Protocol)
-
-## Core Concept
-
-- **Connection-based**
+- Connection-based
 - Must establish connection first
 - Guarantees:
   - Delivery
@@ -145,7 +136,7 @@
 
 ---
 
-## TCP/IP Model
+### TCP/IP Model
 
 - Application
 - Transport
@@ -154,7 +145,7 @@
 
 ---
 
-## Encapsulation (TCP)
+### Encapsulation (TCP)
 
 - Data moves down layers
 - Each layer adds headers
@@ -162,7 +153,7 @@
 
 ---
 
-## Advantages
+### Advantages
 
 - Reliable
 - Ordered data
@@ -170,7 +161,7 @@
 
 ---
 
-## Disadvantages
+### Disadvantages
 
 - Slower than UDP
 - Requires stable connection
@@ -179,7 +170,7 @@
 
 ---
 
-## TCP Header (Layer 4)
+### TCP Header (Layer 4)
 
 - Source Port (random sender port)
 - Destination Port (service port, ex: 80)
@@ -188,24 +179,118 @@
 - Checksum (verifies integrity)
 - Flags (control behavior)
 
-### Not TCP Header
+#### Not TCP Header
 - Source IP → Layer 3
 - Destination IP → Layer 3
 - Data → payload (not header)
 
 ---
 
-## TCP Flags
+### TCP Flags
 
-- SYN → start connection  
-- ACK → acknowledge  
-- FIN → clean close  
-- RST → force close  
-- SYN/ACK → SYN + ACK combined  
+- SYN → start connection
+- ACK → acknowledge
+- FIN → clean close
+- RST → force close
+- SYN/ACK → SYN + ACK combined
 
 ---
 
-## Three-Way Handshake
+### Three-Way Handshake
 
-- SYN → SYN/ACK → ACK
+SYN → SYN/ACK → ACK
 
+---
+
+### Data Transmission
+
+- Happens after handshake
+- Uses sequence numbers
+- Maintains order
+
+---
+
+### Sequence Numbers
+
+- Start random (ISN)
+- Increment by 1
+- Ensure correct order
+
+---
+
+### Closing Connection (Clean)
+
+- Uses FIN
+
+Process:
+1. Send FIN
+2. Receive ACK
+3. Other device sends FIN
+4. Final ACK
+
+---
+
+### Reset Connection (Abrupt)
+
+- Uses RST
+- Immediately terminates connection
+- No cleanup
+
+---
+
+## Ports
+
+### What Ports Are
+
+- Numerical communication endpoints
+- Range: 0–65535
+
+---
+
+### Analogy
+
+- Port = docking station
+- Device must connect to correct port
+- If incompatible → connection fails
+
+---
+
+### Why Ports Matter
+
+- Identify which application is communicating
+- Prevent communication conflicts
+
+---
+
+### Common Ports
+
+| Protocol | Port | Purpose |
+|----------|------|--------|
+| FTP | 21 | File transfer |
+| SSH | 22 | Secure login |
+| HTTP | 80 | Web traffic |
+| HTTPS | 443 | Secure web traffic |
+| SMB | 445 | File/printer sharing |
+| RDP | 3389 | Remote desktop |
+
+---
+
+### Important Notes
+
+- Ports can be changed (ex: 8080 instead of 80)
+- Applications assume default ports
+- Custom ports require:
+  IP:PORT
+
+---
+
+## Final Takeaways
+
+- Packet = Layer 3 (IP)
+- Frame = Layer 2 (MAC)
+- TCP = reliable, connection-based
+- UDP = fast, stateless
+- Ports = identify services
+- Handshake = SYN → SYN/ACK → ACK
+- FIN = clean close
+- RST = forced close
