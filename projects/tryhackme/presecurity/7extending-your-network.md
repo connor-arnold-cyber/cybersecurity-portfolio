@@ -380,3 +380,13 @@ But:
 - Router = connects networks and routes traffic
 - Switch = connects devices inside network
 - VLAN = splits network logically for control and security
+
+
+
+## Proof of Completion
+
+- Platform: TryHackMe
+- Room: Packets & Frames
+- Completed: 04/29/2026
+
+![Completion Proof](images/packets-&-frames-complete.png)
