@@ -1,23 +1,31 @@
 # Cybersecurity Portfolio
 
-Welcome to my cybersecurity portfolio.
-
-This repository documents my hands-on learning as I build practical skills in cybersecurity through labs, writeups, and guided projects.
+This repository documents my hands-on work as I build practical, job-ready cybersecurity skills through labs, coursework, and independent projects.
 
 ## What This Portfolio Includes
-- TryHackMe lab writeups
-- Notes from security learning paths
-- Networking and log analysis projects
-- Incident response style documentation
+
+- Hands-on lab work and walkthroughs
+- Network analysis and security-focused projects
+- Log analysis and incident response-style writeups
+- Structured notes and technical breakdowns
+
+## Repository Structure
+
+- **/projects**
+  - My best and most polished cybersecurity work
+  - Focused on real-world, SOC-relevant skills
+
+- **/learning**
+  - Ongoing labs, coursework, and notes
+  - Covers a range of cybersecurity topics and skill development areas
 
 ## Current Focus
-- Security fundamentals
-- Networking
-- Linux and Windows basics
-- SOC analyst skills
 
-## Sections
-- About Me
-- Skills
-- Certifications
-- Projects
+- Network security (IDS/IPS, segmentation, firewalls)
+- Log analysis and incident response thinking
+- Python scripting for security and automation
+- Building foundational skills for a SOC Analyst role
+
+## Goal
+
+Develop strong, practical cybersecurity skills and demonstrate the ability to apply them in real-world scenarios.
