@@ -114,9 +114,6 @@ Common uses:
 Example:
 "v=spf1 include:_spf.google.com ~all"
 
-OR (like your lab):
-THM{7012BBA60997F35A9516C2E16D2944FF}
-
 ## How DNS Works (Full Process)
 
 ### Step-by-Step (No Cache)
