@@ -64,6 +64,8 @@ TLD facts:
   - dev.admin.google.com
 - Entire domain length limit: 253 characters
 
+![Domain Hierarchy](images/domain-hierarchy.png)
+
 ## DNS Record Types
 
 - DNS is not only for websites
