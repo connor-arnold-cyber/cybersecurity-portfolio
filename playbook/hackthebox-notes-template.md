@@ -1,7 +1,7 @@
 # Hack The Box - Session '#'
 
 ## Machine:
-## Date: -/-/-
+## Date: 
 ## Difficulty:
 ## Objective:
 ## Target IP:
