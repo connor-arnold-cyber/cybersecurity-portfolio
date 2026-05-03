@@ -1,1 +1,59 @@
+# Hack The Box Notes
 
+## Session 1
+
+---
+
+## Machine / Challenge:
+Name:
+
+## Date:
+
+## Objective:
+(What am I trying to do?)
+
+---
+
+## Recon / Enumeration:
+-
+-
+
+Commands used:
+
+---
+
+## Initial Access:
+- What worked:
+- What didn’t:
+
+Commands used:
+
+---
+
+## Privilege Escalation (if applicable):
+-
+
+Commands used:
+
+---
+
+## Key Findings:
+-
+-
+
+---
+
+## What I Learned:
+-
+-
+
+---
+
+## Mistakes / Lessons:
+-
+-
+
+---
+
+## Screenshots:
+(Add later or link if needed)
