@@ -3,16 +3,16 @@
 ## Machine:
 ## Date:
 ## Difficulty:
-## Objective
+## Objective:
 ## Target IP:
 
 ---
 
 ## Recon / Enumeration:
 -
--
 
-##Commands used:
+## Commands Used:
+-
 
 ---
 
@@ -20,31 +20,30 @@
 - What worked:
 - What didn’t:
 
-Commands used:
+## Commands Used:
+-
 
 ---
 
 ## Privilege Escalation (if applicable):
 -
 
-Commands used:
+## Commands Used:
+-
 
 ---
 
 ## Key Findings:
--
 -
 
 ---
 
 ## What I Learned:
 -
--
 
 ---
 
 ## Mistakes / Lessons:
--
 -
 
 ---
