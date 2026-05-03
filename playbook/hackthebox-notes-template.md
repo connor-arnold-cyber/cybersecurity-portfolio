@@ -1,24 +1,18 @@
-# Hack The Box Notes
+# Hack The Box - Session '#'
 
-## Session '#'
-
----
-
-## Machine / Challenge:
-Name:
-
-## Date:
-
+## Machine:
+## Date: -/-/-
+## Difficulty:
 ## Objective:
-(What am I trying to do?)
+## Target IP:
 
 ---
 
 ## Recon / Enumeration:
 -
--
 
-Commands used:
+## Commands Used:
+-
 
 ---
 
@@ -26,31 +20,30 @@ Commands used:
 - What worked:
 - What didn’t:
 
-Commands used:
+## Commands Used:
+-
 
 ---
 
 ## Privilege Escalation (if applicable):
 -
 
-Commands used:
+## Commands Used:
+-
 
 ---
 
 ## Key Findings:
--
 -
 
 ---
 
 ## What I Learned:
 -
--
 
 ---
 
 ## Mistakes / Lessons:
--
 -
 
 ---
