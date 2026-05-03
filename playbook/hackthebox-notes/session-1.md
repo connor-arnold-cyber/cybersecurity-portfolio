@@ -1,16 +1,10 @@
-# Hack The Box Notes
+# Hack The Box - Session 1
 
-## Session 1
-
----
-
-## Machine / Challenge:
-Name:
-
+## Machine:
 ## Date:
-
-## Objective:
-(What am I trying to do?)
+## Difficulty:
+## Objective
+## Target IP:
 
 ---
 
@@ -18,7 +12,7 @@ Name:
 -
 -
 
-Commands used:
+##Commands used:
 
 ---
 
