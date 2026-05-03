@@ -1,6 +1,6 @@
 # Hack The Box Notes
 
-## Session 1
+## Session #
 
 ---
 
