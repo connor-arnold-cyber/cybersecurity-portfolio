@@ -1,52 +1,50 @@
-# Hack The Box - Session '#'
+# Hack The Box - [Machine Name]
 
-## Machine:
-## Date: 
-## Difficulty:
-## Objective:
-## Target IP:
+## Lab Info
 
----
+### Platform:
+Hack The Box
 
-## Recon / Enumeration:
--
+### Path / Series:
 
-## Commands Used:
--
 
----
+### Machine:
 
-## Initial Access:
-- What worked:
-- What didn’t:
 
-## Commands Used:
--
+### Date:
 
----
 
-## Privilege Escalation (if applicable):
--
+### Difficulty:
 
-## Commands Used:
--
+
+### Main Topic:
+
+
+### Target IP:
+
+
+### Objective:
+
 
 ---
 
-## Key Findings:
--
+## Quick Summary
+
+
 
 ---
 
-## What I Learned:
--
+## Setup / Connection Notes
+
+- 
 
 ---
 
-## Mistakes / Lessons:
--
+## Recon / Enumeration
 
----
+### What I Did:
+- 
 
-## Screenshots:
-(Add later or link if needed)
+### Commands Used:
+```cmd
+
