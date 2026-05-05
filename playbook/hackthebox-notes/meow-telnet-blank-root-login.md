@@ -1,47 +1,60 @@
 # Hack The Box - Meow
 
-## Machine:
+## Lab Info
+
+### Platform:
+Hack The Box
+
+### Path / Series:
+Starting Point
+
+### Machine:
 Meow
 
-## Date:
+### Date:
 05/05/2026
 
-## Difficulty:
+### Difficulty:
 Very Easy
 
-## Objective:
-Connect to the target, confirm it is reachable, enumerate open services, identify a possible way to access the machine, and retrieve the flag.
+### Main Topic:
+Telnet enumeration and blank root login
 
-## Target IP:
+### Target IP:
 10.129.169.227
+
+### Objective:
+Connect to the target machine, confirm it is reachable, scan for open services, identify a way to access the machine, and retrieve the flag.
 
 ---
 
-## Recon / Enumeration:
-- Confirmed the target was reachable using `ping`.
-- `ping` sends an ICMP Echo Request to a target. If the target replies, it confirms that my computer can communicate with the machine.
-- The target responded successfully, which confirmed that my VPN connection was working and that the machine was online.
-- Ran an Nmap scan to identify open ports and services.
-- Nmap found one open TCP port: `23/tcp`.
-- Port `23/tcp` was running Telnet.
-- Nmap identified the service as `Linux telnetd`.
-- Telnet is a remote login service that allows command-line access over the network.
-- Telnet is insecure because it does not encrypt traffic.
-- Since Telnet was the only open service, it became the next logical thing to test.
+## Quick Summary
 
-## Commands Used:
-- `ping 10.129.169.227`
-  - Tests whether the target is reachable over the network.
-  - Uses ICMP Echo Request and Echo Reply.
-  - In this lab, ping worked, proving the VPN and target connection were good.
+This lab focused on basic enumeration and remote login. I connected to the Hack The Box VPN, confirmed that the target was reachable with `ping`, scanned the machine with `nmap`, found Telnet running on port `23/tcp`, connected to the Telnet service, logged in as `root` with a blank password, and retrieved the flag from `flag.txt`.
 
-- `nmap -sC -sV 10.129.169.227`
-  - Scans the target for open ports and services.
-  - `nmap` means Network Mapper. It checks what network “doors” are open.
-  - `-sC` runs Nmap’s default scripts. These scripts collect extra useful information about services, banners, and common safe checks.
-  - `-sV` detects service versions. This means it tries to identify what specific service or software is running behind an open port.
-  - `10.129.169.227` is the target IP address.
+The main lesson from this machine is that exposed remote login services combined with weak or blank credentials can lead to full system access.
 
-## Nmap Result:
-```text
-23/tcp open telnet Linux telnetd
+---
+
+## Setup / Connection Notes
+
+- Connected to Hack The Box using OpenVPN.
+- Pwnbox was not available because the free Pwnbox time limit was used.
+- OpenVPN showed a successful connection.
+- The target machine was started from the Meow machine page.
+- The target IP was `10.129.169.227`.
+- The IP had changed from the previous session, so I had to make sure I used the current IP shown by Hack The Box.
+
+---
+
+## Recon / Enumeration
+
+### What I Did:
+- Used `ping` to confirm the target was reachable.
+- Used `nmap` to scan the target for open ports and services.
+- Reviewed the Nmap output to decide what service to test next.
+
+### Commands Used:
+```cmd
+ping 10.129.169.227
+nmap -sC -sV 10.129.169.227
