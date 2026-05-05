@@ -58,3 +58,10 @@ The main lesson from this machine is that exposed remote login services combined
 ```cmd
 ping 10.129.169.227
 nmap -sC -sV 10.129.169.227
+```
+
+## Screenshots: 
+
+![meow2](images/dns-in-detail-complete.png)
+![meow3](images/dns-in-detail-complete.png)
+![Completion Proof](images/dns-in-detail-complete.png)
