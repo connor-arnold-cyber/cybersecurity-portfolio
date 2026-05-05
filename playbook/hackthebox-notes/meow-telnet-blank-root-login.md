@@ -62,6 +62,6 @@ nmap -sC -sV 10.129.169.227
 
 ## Screenshots: 
 
-![meow2](images/dns-in-detail-complete.png)
-![meow3](images/dns-in-detail-complete.png)
-![Completion Proof](images/dns-in-detail-complete.png)
+![meow2](screenshots/meow2.png)
+![meow3](screenshots/meow3.png)
+![Completion Proof](screenshots/meow-complete.png)
