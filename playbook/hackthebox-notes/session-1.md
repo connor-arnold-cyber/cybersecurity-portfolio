@@ -1,10 +1,10 @@
 # Hack The Box - Session 1
 
-## Machine:
-## Date:
-## Difficulty:
-## Objective:
-## Target IP:
+## Machine: Meow
+## Date: 05/05/2026
+## Difficulty: Easy
+## Objective: Connect to target, enumerate open services, find a way to access the maching
+## Target IP: 10.129.169.227
 
 ---
 
