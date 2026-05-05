@@ -9,12 +9,16 @@
 ---
 
 ## Recon / Enumeration:
--
+- Ping confirmed the target was reachable.
+- Nmap scan found one open port: 23/tcp.
+- Port 23 is running Telnet on Linux.
 
 ## Commands Used:
--
+- ping - test connection using icmp request
+- nmap - network mapper, scans for open port
+- -sC
 
----
+--- 
 
 ## Initial Access:
 - What worked:
