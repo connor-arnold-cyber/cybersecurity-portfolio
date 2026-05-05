@@ -24,41 +24,44 @@ Telnet enumeration and blank root login
 10.129.169.227
 
 ### Objective:
-Connect to the target machine, confirm it is reachable, scan for open services, identify a way to access the machine, and retrieve the flag.
+Connect to the target machine, confirm it is reachable, identify exposed services, access the machine through the available remote login service, and capture the flag.
 
 ---
 
 ## Quick Summary
 
-This lab focused on basic enumeration and remote login. I connected to the Hack The Box VPN, confirmed that the target was reachable with `ping`, scanned the machine with `nmap`, found Telnet running on port `23/tcp`, connected to the Telnet service, logged in as `root` with a blank password, and retrieved the flag from `flag.txt`.
+This lab focused on basic recon, service identification, and weak credential exposure. I connected to the Hack The Box VPN, verified the target was reachable, identified Telnet running on port 23, connected to the Telnet service, logged in as root with a blank password, found `flag.txt`, and submitted the flag successfully.
 
-The main lesson from this machine is that exposed remote login services combined with weak or blank credentials can lead to full system access.
+The main lesson from this lab is that exposed remote login services become serious risks when paired with weak or blank credentials.
 
 ---
 
 ## Setup / Connection Notes
 
 - Connected to Hack The Box using OpenVPN.
-- Pwnbox was not available because the free Pwnbox time limit was used.
-- OpenVPN showed a successful connection.
+- Pwnbox was unavailable because the free usage time had already been used.
 - The target machine was started from the Meow machine page.
-- The target IP was `10.129.169.227`.
-- The IP had changed from the previous session, so I had to make sure I used the current IP shown by Hack The Box.
+- The target IP changed after restarting the machine, so I used the current IP shown by Hack The Box.
+- Windows required extra setup because Nmap and Telnet were not available by default.
 
 ---
 
 ## Recon / Enumeration
 
 ### What I Did:
-- Used `ping` to confirm the target was reachable.
-- Used `nmap` to scan the target for open ports and services.
-- Reviewed the Nmap output to decide what service to test next.
+- Verified that the target was reachable.
+- Scanned the target to identify open ports and services.
+- Found one open TCP port.
 
 ### Commands Used:
 ```cmd
 ping 10.129.169.227
 nmap -sC -sV 10.129.169.227
 ```
+## Results:
+Ping succeeded with 0% packet loss.
+
+23/tcp open  telnet  Linux telnetd
 
 ## Screenshots: 
 
