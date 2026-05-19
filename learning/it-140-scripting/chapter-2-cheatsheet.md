@@ -309,13 +309,13 @@ text.count("x")
 ## Boolean Methods
 
 ```python
-text.isalnum()
-text.isdigit()
-text.islower()
-text.isupper()
-text.isspace()
-text.startswith("http")
-text.endswith(".txt")
+text.isalnum()            # True if all characters are letters and/or numbers.
+text.isdigit()            # True if all characters are digits (0-9).
+text.islower()            # True if all letters are lowercase.
+text.isupper()            # True if all letters are uppercase.
+text.isspace()            # True if all characters are whitespace (spaces, tabs, newlines).
+text.startswith("http")   # True if the string begins with "http".
+text.endswith(".txt")     # True if the string ends with ".txt".
 ```
 
 ## Case and Cleanup
