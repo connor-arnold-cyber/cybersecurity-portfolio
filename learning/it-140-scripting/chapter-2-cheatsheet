@@ -1,0 +1,415 @@
+# Chapter 2 Python Cheat Sheet (IT-140)
+
+---
+
+# 2.1 Strings
+
+## Create Strings
+
+```python
+name = "Connor"
+name = 'Connor'
+empty = ""
+user_input = input()
+```
+
+## String Basics
+
+- Strings are sequences of characters.
+- Indexing starts at `0`.
+- Strings are immutable (cannot change individual characters).
+
+## Length
+
+```python
+len(name)
+```
+
+## Indexing
+
+```python
+name[0]      # First character
+name[-1]     # Last character
+```
+
+## Concatenation
+
+```python
+first = "New"
+second = "York"
+
+city = first + second       # NewYork
+city = first + " " + second # New York
+```
+
+---
+
+# 2.2 Lists
+
+## Create Lists
+
+```python
+numbers = [5, 10, 20]
+mixed = [1, 2.5, "abc"]
+empty_list = []
+```
+
+## List Basics
+
+- Ordered collection.
+- Mutable (can be changed).
+- Can contain mixed data types.
+
+## Access Elements
+
+```python
+numbers[0]
+numbers[-1]
+```
+
+## Modify Elements
+
+```python
+numbers[1] = 99
+```
+
+## Add and Remove
+
+```python
+numbers.append(50)      # Add to end
+numbers.pop(1)          # Remove by index
+numbers.remove(99)      # Remove by value
+```
+
+## Useful Functions
+
+```python
+len(numbers)
+sum(numbers)
+min(numbers)
+max(numbers)
+```
+
+## Useful Methods
+
+```python
+numbers.index(10)
+numbers.count(10)
+```
+
+## Concatenate Lists
+
+```python
+list3 = list1 + list2
+```
+
+---
+
+# 2.3 Dictionaries
+
+## Create Dictionaries
+
+```python
+ages = {"Bob": 27, "Frank": 75}
+empty_dict = {}
+```
+
+## Dictionary Basics
+
+- Stores key-value pairs.
+- Mutable.
+- Keys must be immutable.
+- Values can be any type.
+
+## Access Values
+
+```python
+ages["Bob"]
+```
+
+## Add or Update
+
+```python
+ages["Alice"] = 30
+ages["Bob"] = 28
+```
+
+## Delete
+
+```python
+del ages["Bob"]
+```
+
+---
+
+# 2.4 Common Data Types
+
+| Type | Description |
+|------|-------------|
+| int | Whole numbers |
+| float | Decimal numbers |
+| str | Text |
+| list | Ordered, mutable |
+| tuple | Ordered, immutable |
+| set | Unordered, unique values |
+| dict | Key-value pairs |
+
+---
+
+# 2.5 Grade Calculation Formulas
+
+## Percentage
+
+```python
+percent = (score / total_points) * 100
+```
+
+## Average
+
+```python
+average = (a + b + c) / 3
+```
+
+## Weighted Average
+
+```python
+overall = 0.6 * exam_average + 0.4 * assignment_average
+```
+
+---
+
+# 2.6 Type Conversions
+
+```python
+int("500")      # 500
+float("1.75")   # 1.75
+str(99)         # "99"
+```
+
+## Common Input Pattern
+
+```python
+age = int(input())
+price = float(input())
+name = input()
+```
+
+## Important Rule
+
+- `int(4.9)` becomes `4` (drops the decimal; does not round).
+
+---
+
+# 2.7 f-Strings
+
+## Basic Usage
+
+```python
+name = "Connor"
+print(f"Hello, {name}")
+```
+
+## Expressions
+
+```python
+print(f"{2 + 3}")
+```
+
+## Debug Format
+
+```python
+print(f"{total=}")
+```
+
+## Escape Curly Braces
+
+```python
+print(f"{{Hello}}")
+```
+
+---
+
+# 2.8 Advanced String Formatting
+
+## Width
+
+```python
+f"{name:10}"
+```
+
+## Alignment
+
+```python
+f"{name:<10}"   # Left
+f"{name:>10}"   # Right
+f"{name:^10}"   # Center
+```
+
+## Fill Characters
+
+```python
+f"{9:0>4}"      # 0009
+f"{name:*^10}"
+```
+
+## Floating Precision
+
+```python
+f"{price:.2f}"
+f"{price:,.2f}"
+```
+
+---
+
+# 2.9 String Slicing
+
+## Basic Slicing
+
+```python
+text[start:end]
+```
+
+## Common Examples
+
+```python
+text[0:5]     # First 5 characters
+text[:5]      # Same as above
+text[5:]      # From index 5 to end
+text[:-1]     # Everything except last character
+text[::2]     # Every other character
+text[::-1]    # Reverse string
+```
+
+## Rules
+
+- Start index is included.
+- End index is excluded.
+- Slicing returns a new string.
+
+---
+
+# 2.10 String Methods
+
+## Search and Replace
+
+```python
+text.replace("old", "new")
+text.find("x")
+text.rfind("x")
+text.count("x")
+```
+
+## Membership
+
+```python
+"cat" in text
+"dog" not in text
+```
+
+## Boolean Methods
+
+```python
+text.isalnum()
+text.isdigit()
+text.islower()
+text.isupper()
+text.isspace()
+text.startswith("http")
+text.endswith(".txt")
+```
+
+## Case and Cleanup
+
+```python
+text.lower()
+text.upper()
+text.capitalize()
+text.title()
+text.strip()
+```
+
+## Common Input Cleanup
+
+```python
+name = input().strip().lower()
+```
+
+## Important Rule
+
+- Use `==` to compare strings.
+- Do not use `is`.
+
+---
+
+# 2.11 Splitting and Joining Strings
+
+## split()
+
+```python
+text.split()
+text.split(",")
+text.split("/")
+```
+
+## join()
+
+```python
+",".join(["a", "b", "c"])
+"".join(["New", "York"])
+"/".join(["home", "user", "docs"])
+```
+
+## Replace Separators
+
+```python
+title = "Python-Lab-Warmup"
+tokens = title.split("-")
+title = ":".join(tokens)
+```
+
+## Parse Key-Value Pairs
+
+```python
+pair = "State = DC"
+tokens = pair.split(" = ")
+```
+
+---
+
+# Most Common Input Patterns
+
+```python
+name = input()
+age = int(input())
+price = float(input())
+words = input().split()
+```
+
+---
+
+# Most Common Output Patterns
+
+```python
+print(name)
+print(f"Hello, {name}")
+print(f"${price:.2f}")
+```
+
+---
+
+# Most Common Sequence Operations
+
+```python
+len(sequence)
+sequence[0]
+sequence[-1]
+sequence[start:end]
+```
+
+---
+
+# Most Common Data Cleaning Pattern
+
+```python
+text = input().strip().lower()
+```
