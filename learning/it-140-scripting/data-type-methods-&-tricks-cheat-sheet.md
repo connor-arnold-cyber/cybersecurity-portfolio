@@ -1,477 +1,377 @@
-# Python Data Type Methods & Tricks Cheat Sheet
+# Python Data Type Methods & Tricks Cheat Sheet (Search-Optimized)
 
-A quick guide to common things you can do with Python data types.
+> Designed for fast Ctrl+F searching.
+>
+> Search tags:
+> LEN, MIN, MAX, SUM, SORTED, APPEND, EXTEND, INSERT, REMOVE, POP, COUNT, INDEX, SPLIT, JOIN, GET, ITEMS, ENUMERATE, RANGE, COPY, SLICE
 
 ---
 
-# Universal / Works on Many Types
+# TABLE OF CONTENTS
 
-## `len()`
+- LEN
+- MIN / MAX
+- SUM
+- SORTED
+- IN
+- INDEXING
+- SLICING
+- COPY LIST
+- APPEND
+- EXTEND
+- INSERT
+- REMOVE
+- POP
+- SORT
+- REVERSE
+- COUNT
+- INDEX METHOD
+- LOWER / UPPER
+- STRIP
+- REPLACE
+- SPLIT
+- JOIN
+- FIND
+- STARTSWITH / ENDSWITH
+- ISALPHA / ISDIGIT / ISALNUM
+- DICTIONARY GET
+- KEYS / VALUES / ITEMS
+- TUPLES
+- SETS
+- RANGE
+- TYPE CONVERSION
+- ENUMERATE
+- COMMON LOOPS
+- BEGINNER POWER COMBOS
+- ZYBOOKS QUICK ANSWERS
 
-Gets the number of items.
+---
+
+# LEN
 
 ```python
 len(my_list)
 len(my_string)
 len(my_dict)
-len(my_tuple)
-len(my_set)
 ```
 
-Works on:
-- Lists
-- Strings
-- Dictionaries
-- Tuples
-- Sets
+Purpose: Count items.
 
 ---
 
-## `min()` and `max()`
-
-Gets the smallest or largest value.
+# MIN / MAX
 
 ```python
-numbers = [4, 9, 1, 7]
-
-print(min(numbers))  # 1
-print(max(numbers))  # 9
+min(numbers)
+max(numbers)
 ```
 
-Works on:
-- Lists
-- Tuples
-- Sets
-- Strings
-- Ranges
-
-For strings, it checks alphabetically.
-
-```python
-names = ["Connor", "Alex", "Zach"]
-
-print(min(names))  # Alex
-print(max(names))  # Zach
-```
+Purpose: Smallest / largest value.
 
 ---
 
-## `sum()`
-
-Adds numeric values.
+# SUM
 
 ```python
-numbers = [1, 2, 3, 4]
-
-print(sum(numbers))  # 10
+sum(numbers)
 ```
 
-Works on:
-- Lists of numbers
-- Tuples of numbers
-- Sets of numbers
-- Ranges
-
-Does not work on strings.
+Purpose: Add numeric values.
 
 ---
 
-## `sorted()`
-
-Returns a sorted version without permanently changing the original.
+# SORTED
 
 ```python
-numbers = [3, 1, 4, 2]
-
-print(sorted(numbers))  # [1, 2, 3, 4]
+sorted(numbers)
+sorted(numbers, reverse=True)
 ```
 
-Reverse order:
-
-```python
-print(sorted(numbers, reverse=True))
-```
-
-Works on:
-- Lists
-- Tuples
-- Sets
-- Strings
-- Dictionaries
+Returns a NEW sorted copy.
 
 ---
 
-## `in`
-
-Checks if something exists.
+# IN
 
 ```python
-my_list = ["apple", "banana", "cherry"]
-
-print("banana" in my_list)  # True
+"apple" in fruits
+"name" in person
 ```
 
-Works on:
-- Lists
-- Strings
-- Dictionaries
-- Tuples
-- Sets
+Checks whether a value exists.
 
-For dictionaries, it checks keys.
+---
+
+# INDEXING
 
 ```python
-person = {"name": "Connor", "age": 27}
-
-print("name" in person)  # True
+my_list[0]     # first
+my_list[-1]    # last
+my_list[-2]    # second-to-last
 ```
 
 ---
 
-# Indexing and Slicing
-
-## Indexing
-
-Gets one item by position.
+# SLICING
 
 ```python
-my_list = ["a", "b", "c"]
-
-print(my_list[0])  # a
-print(my_list[1])  # b
-print(my_list[-1]) # c
+my_list[1:4]
+my_list[:3]
+my_list[2:]
+my_list[::-1]
 ```
 
-Works on:
-- Lists
-- Strings
-- Tuples
+`[::-1]` = reverse
 
 ---
 
-## Slicing
-
-Gets part of a sequence.
+# COPY LIST
 
 ```python
-my_list = [10, 20, 30, 40, 50]
-
-print(my_list[1:4])   # [20, 30, 40]
-print(my_list[:3])    # [10, 20, 30]
-print(my_list[2:])    # [30, 40, 50]
-print(my_list[::-1])  # [50, 40, 30, 20, 10]
+copy_list = my_list[:]
 ```
 
-Works on:
-- Lists
-- Strings
-- Tuples
+Creates a copy.
+
+DO NOT CONFUSE WITH:
+
+```python
+copy_list = my_list
+```
+
+That points to the same list.
 
 ---
 
-# List Methods
-
-## `.append()`
-
-Adds one item to the end.
+# APPEND
 
 ```python
-my_list = [1, 2, 3]
-
-my_list.append(4)
-
-print(my_list)  # [1, 2, 3, 4]
+my_list.append(value)
 ```
+
+Add ONE item to end.
 
 ---
 
-## `.insert()`
-
-Adds an item at a specific position.
+# EXTEND
 
 ```python
-my_list = ["a", "c"]
+my_list.extend([3, 4])
+```
 
-my_list.insert(1, "b")
+Add MULTIPLE items to end.
 
-print(my_list)  # ["a", "b", "c"]
+```python
+[1,2].extend([3,4])
+# [1,2,3,4]
 ```
 
 ---
 
-## `.remove()`
-
-Removes a specific value.
+# INSERT
 
 ```python
-my_list = ["red", "blue", "green"]
-
-my_list.remove("blue")
-
-print(my_list)  # ["red", "green"]
+my_list.insert(index, value)
 ```
+
+Insert before index.
+
+Common:
+
+```python
+my_list.insert(0, value)
+```
+
+Insert at front.
 
 ---
 
-## `.pop()`
-
-Removes and returns an item.
+# REMOVE
 
 ```python
-my_list = ["a", "b", "c"]
-
-item = my_list.pop()
-
-print(item)     # c
-print(my_list)  # ["a", "b"]
+my_list.remove(value)
 ```
 
-Remove by index:
+Remove first matching value.
+
+Errors if value not found.
+
+---
+
+# POP
+
+```python
+my_list.pop()
+```
+
+Remove and return last item.
 
 ```python
 my_list.pop(0)
 ```
 
----
-
-## `.sort()`
-
-Sorts the list permanently.
-
-```python
-numbers = [3, 1, 4, 2]
-
-numbers.sort()
-
-print(numbers)  # [1, 2, 3, 4]
-```
-
-Reverse:
-
-```python
-numbers.sort(reverse=True)
-```
+Remove and return item at index 0.
 
 ---
 
-## `.reverse()`
-
-Reverses the list permanently.
+# SORT
 
 ```python
-numbers = [1, 2, 3]
-
-numbers.reverse()
-
-print(numbers)  # [3, 2, 1]
+my_list.sort()
 ```
+
+Sort ORIGINAL list.
+
+```python
+my_list.sort(reverse=True)
+```
+
+Descending.
 
 ---
 
-## `.count()`
-
-Counts how many times a value appears.
+# REVERSE
 
 ```python
-numbers = [1, 2, 2, 3]
-
-print(numbers.count(2))  # 2
+my_list.reverse()
 ```
+
+Reverse ORIGINAL list.
 
 ---
 
-## `.index()`
-
-Finds the first position of a value.
+# COUNT
 
 ```python
-names = ["Alex", "Connor", "Sam"]
-
-print(names.index("Connor"))  # 1
+my_list.count(value)
 ```
+
+Count occurrences.
 
 ---
 
-# String Methods
-
-## `.lower()` and `.upper()`
-
-Changes capitalization.
+# INDEX METHOD
 
 ```python
-name = "Connor"
-
-print(name.lower())  # connor
-print(name.upper())  # CONNOR
+my_list.index(value)
 ```
+
+Find first position.
 
 ---
 
-## `.strip()`
-
-Removes spaces from the beginning and end.
+# LOWER / UPPER
 
 ```python
-text = "   hello   "
-
-print(text.strip())  # "hello"
+text.lower()
+text.upper()
 ```
+
+Change capitalization.
 
 ---
 
-## `.replace()`
-
-Replaces part of a string.
+# STRIP
 
 ```python
-text = "I like cats"
-
-print(text.replace("cats", "dogs"))
+text.strip()
 ```
+
+Remove spaces from beginning/end.
 
 ---
 
-## `.split()`
-
-Splits a string into a list.
+# REPLACE
 
 ```python
-sentence = "red blue green"
-
-words = sentence.split()
-
-print(words)  # ["red", "blue", "green"]
+text.replace("old", "new")
 ```
 
-Split by something specific:
-
-```python
-date = "06/09/2026"
-
-parts = date.split("/")
-
-print(parts)  # ["06", "09", "2026"]
-```
+Replace text.
 
 ---
 
-## `.join()`
-
-Combines a list of strings into one string.
+# SPLIT
 
 ```python
-words = ["red", "blue", "green"]
-
-sentence = " ".join(words)
-
-print(sentence)  # red blue green
+sentence.split()
 ```
 
-Join with commas:
+String → List
 
 ```python
-items = ["apple", "banana", "cherry"]
-
-print(", ".join(items))  # apple, banana, cherry
+date.split("/")
 ```
 
-Important: `.join()` only works with strings.
+Custom separator.
 
 ---
 
-## `.find()`
-
-Finds the position of text.
+# JOIN
 
 ```python
-message = "hello world"
-
-print(message.find("world"))  # 6
+" ".join(words)
 ```
 
-Returns `-1` if not found.
+List → String
+
+```python
+", ".join(items)
+```
+
+Important: items must be strings.
 
 ---
 
-## `.startswith()` and `.endswith()`
-
-Checks the beginning or end of a string.
+# FIND
 
 ```python
-file_name = "notes.txt"
+text.find("word")
+```
 
-print(file_name.endswith(".txt"))  # True
+Returns position or -1.
+
+---
+
+# STARTSWITH / ENDSWITH
+
+```python
+file.endswith(".txt")
+url.startswith("https")
 ```
 
 ---
 
-## `.isalpha()`, `.isdigit()`, `.isalnum()`
-
-Checks what kind of characters are in a string.
+# ISALPHA / ISDIGIT / ISALNUM
 
 ```python
-"abc".isalpha()    # True
-"123".isdigit()    # True
-"abc123".isalnum() # True
+"abc".isalpha()
+"123".isdigit()
+"abc123".isalnum()
 ```
 
 ---
 
-# Dictionary Methods
-
-## Access by key
+# DICTIONARY GET
 
 ```python
-person = {
-    "name": "Connor",
-    "age": 27
-}
-
-print(person["name"])  # Connor
+person.get("name")
+person.get("email", "Unknown")
 ```
+
+Safe lookup.
 
 ---
 
-## `.get()`
-
-Safely gets a value by key.
+# KEYS / VALUES / ITEMS
 
 ```python
-print(person.get("name"))     # Connor
-print(person.get("height"))   # None
+person.keys()
+person.values()
+person.items()
 ```
 
-With a backup value:
-
-```python
-print(person.get("height", "Unknown"))
-```
-
----
-
-## `.keys()`
-
-Gets all keys.
-
-```python
-print(person.keys())
-```
-
----
-
-## `.values()`
-
-Gets all values.
-
-```python
-print(person.values())
-```
-
----
-
-## `.items()`
-
-Gets key-value pairs.
+Loop:
 
 ```python
 for key, value in person.items():
@@ -480,465 +380,250 @@ for key, value in person.items():
 
 ---
 
-## Add or update a value
-
-```python
-person["age"] = 28
-person["city"] = "Dawsonville"
-```
-
----
-
-## `.pop()`
-
-Removes a key and returns its value.
-
-```python
-age = person.pop("age")
-
-print(age)
-```
-
----
-
-# Tuple Tricks
-
-Tuples are like locked lists.
+# TUPLES
 
 ```python
 my_tuple = (1, 2, 3)
 ```
 
-You can index them:
+Can:
+- Index
+- Slice
+- Loop
+
+Cannot:
+- Modify
+
+---
+
+# SETS
+
+Add:
 
 ```python
-print(my_tuple[0])
+my_set.add(value)
 ```
 
-You can loop through them:
+Remove:
 
 ```python
-for item in my_tuple:
+my_set.remove(value)
+```
+
+Safe remove:
+
+```python
+my_set.discard(value)
+```
+
+Union:
+
+```python
+a | b
+```
+
+Intersection:
+
+```python
+a & b
+```
+
+Difference:
+
+```python
+a - b
+```
+
+---
+
+# RANGE
+
+```python
+range(5)
+range(1, 6)
+range(0, 10, 2)
+```
+
+(start, stop, step)
+
+---
+
+# TYPE CONVERSION
+
+```python
+str(x)
+int(x)
+float(x)
+list(x)
+set(x)
+```
+
+---
+
+# ENUMERATE
+
+```python
+for index, value in enumerate(my_list):
+    print(index, value)
+```
+
+Index + value together.
+
+---
+
+# COMMON LOOPS
+
+List:
+
+```python
+for item in my_list:
     print(item)
 ```
 
-You cannot change them:
+Indexes:
 
 ```python
-# my_tuple[0] = 99
-# This causes an error
+for i in range(len(my_list)):
+    print(i, my_list[i])
 ```
 
----
-
-# Set Methods
-
-## `.add()`
-
-Adds one item.
+Dictionary:
 
 ```python
-my_set = {"apple", "banana"}
-
-my_set.add("cherry")
-```
-
----
-
-## `.remove()`
-
-Removes an item.
-
-```python
-my_set.remove("banana")
-```
-
-Causes an error if the item does not exist.
-
----
-
-## `.discard()`
-
-Removes an item safely.
-
-```python
-my_set.discard("orange")
-```
-
-No error if the item does not exist.
-
----
-
-## Set Union
-
-Combines sets.
-
-```python
-a = {1, 2, 3}
-b = {3, 4, 5}
-
-print(a | b)  # {1, 2, 3, 4, 5}
-```
-
----
-
-## Set Intersection
-
-Gets items that appear in both sets.
-
-```python
-print(a & b)  # {3}
-```
-
----
-
-## Set Difference
-
-Gets items in one set but not the other.
-
-```python
-print(a - b)  # {1, 2}
-```
-
----
-
-# Range Tricks
-
-## Basic range
-
-```python
-for number in range(5):
-    print(number)
-```
-
-Output:
-
-```python
-0
-1
-2
-3
-4
-```
-
----
-
-## Start and stop
-
-```python
-for number in range(1, 6):
-    print(number)
-```
-
-Output:
-
-```python
-1
-2
-3
-4
-5
-```
-
----
-
-## Start, stop, step
-
-```python
-for number in range(0, 10, 2):
-    print(number)
-```
-
-Output:
-
-```python
-0
-2
-4
-6
-8
-```
-
----
-
-# Type Conversion
-
-## Convert to string
-
-```python
-age = 27
-
-text = str(age)
-```
-
----
-
-## Convert to integer
-
-```python
-number = int("25")
-```
-
----
-
-## Convert to float
-
-```python
-price = float("19.99")
-```
-
----
-
-## Convert to list
-
-```python
-letters = list("hello")
-
-print(letters)  # ["h", "e", "l", "l", "o"]
-```
-
----
-
-## Convert to set
-
-```python
-numbers = [1, 2, 2, 3]
-
-unique_numbers = set(numbers)
-
-print(unique_numbers)  # {1, 2, 3}
-```
-
----
-
-# Common Loop Patterns
-
-## Loop through a list
-
-```python
-names = ["Alex", "Connor", "Sam"]
-
-for name in names:
-    print(name)
-```
-
----
-
-## Loop through indexes
-
-```python
-names = ["Alex", "Connor", "Sam"]
-
-for i in range(len(names)):
-    print(i, names[i])
-```
-
----
-
-## Better way: `enumerate()`
-
-```python
-names = ["Alex", "Connor", "Sam"]
-
-for index, name in enumerate(names):
-    print(index, name)
-```
-
----
-
-## Loop through dictionary
-
-```python
-person = {
-    "name": "Connor",
-    "age": 27
-}
-
-for key, value in person.items():
+for key, value in my_dict.items():
     print(key, value)
 ```
 
 ---
 
-# Quick Capability Table
+# BEGINNER POWER COMBOS
 
-| Tool / Method | Works On | What It Does |
-|---|---|---|
-| `len()` | list, string, dict, tuple, set | Gets number of items |
-| `min()` | list, tuple, set, string, range | Gets smallest value |
-| `max()` | list, tuple, set, string, range | Gets largest value |
-| `sum()` | numeric lists, tuples, sets, ranges | Adds values |
-| `sorted()` | list, tuple, set, string, dict | Returns sorted version |
-| `in` | list, string, dict, tuple, set | Checks if value exists |
-| `[x]` | list, string, tuple | Gets item by index |
-| `[start:stop]` | list, string, tuple | Gets a slice |
-| `.append()` | list | Adds item to end |
-| `.remove()` | list, set | Removes item |
-| `.pop()` | list, dict, set | Removes and returns item |
-| `.sort()` | list | Sorts list permanently |
-| `.split()` | string | Turns string into list |
-| `.join()` | string method used on list of strings | Turns list into string |
-| `.get()` | dict | Safely gets value by key |
-| `.keys()` | dict | Gets dictionary keys |
-| `.values()` | dict | Gets dictionary values |
-| `.items()` | dict | Gets key-value pairs |
-| `.add()` | set | Adds item to set |
-| `.discard()` | set | Safely removes item from set |
-| `enumerate()` | list, tuple, string | Gives index and value |
-| `range()` | numbers / loops | Creates number sequence |
-| `str()` | almost anything | Converts to string |
-| `int()` | number-like values | Converts to integer |
-| `float()` | number-like values | Converts to decimal |
-| `list()` | iterable values | Converts to list |
-| `set()` | iterable values | Removes duplicates |
-
----
-
-# Quick Memory Key
-
-- `len()` = How many?
-- `min()` = Smallest?
-- `max()` = Biggest?
-- `sum()` = Add them up
-- `sorted()` = Give me a sorted copy
-- `.sort()` = Sort the original list
-- `in` = Is it there?
-- `[0]` = First item
-- `[-1]` = Last item
-- `[1:4]` = Get part of it
-- `.append()` = Add to list
-- `.pop()` = Remove and keep it
-- `.remove()` = Remove by value
-- `.split()` = String to list
-- `.join()` = List to string
-- `.get()` = Safe dictionary lookup
-- `.items()` = Dictionary loop helper
-- `set()` = Remove duplicates
-- `enumerate()` = Index + value while looping
-
----
-
-# Beginner Power Combos
-
-## Remove duplicates from a list
+## Remove Duplicates
 
 ```python
-numbers = [1, 2, 2, 3, 3, 4]
-
-unique_numbers = list(set(numbers))
-
-print(unique_numbers)
+unique = list(set(my_list))
 ```
 
----
-
-## Count items in a list
+## Reverse String
 
 ```python
-colors = ["red", "blue", "red", "green"]
-
-print(colors.count("red"))  # 2
+word[::-1]
 ```
 
----
-
-## Sort a list without changing original
+## Sort Copy
 
 ```python
-scores = [88, 92, 75]
-
-sorted_scores = sorted(scores)
+new_list = sorted(old_list)
 ```
 
----
-
-## Sort a list permanently
+## Sort Original
 
 ```python
-scores = [88, 92, 75]
-
-scores.sort()
+old_list.sort()
 ```
 
----
-
-## Turn a sentence into words
+## String → Words
 
 ```python
-sentence = "Python is awesome"
-
 words = sentence.split()
-
-print(words)
 ```
 
----
-
-## Turn words into a sentence
+## Words → String
 
 ```python
-words = ["Python", "is", "awesome"]
-
 sentence = " ".join(words)
+```
 
-print(sentence)
+## Safe Dictionary Lookup
+
+```python
+person.get("email", "No email")
 ```
 
 ---
 
-## Safely get dictionary data
+# ZYBOOKS QUICK ANSWERS
+
+## First Item
 
 ```python
-student = {
-    "name": "Connor",
-    "grade": 95
-}
+my_list[0]
+```
 
-print(student.get("name", "Unknown"))
-print(student.get("email", "No email listed"))
+## Last Item
+
+```python
+my_list[-1]
+```
+
+## Copy List
+
+```python
+my_list[:]
+```
+
+## Count Value
+
+```python
+my_list.count(value)
+```
+
+## Find Position
+
+```python
+my_list.index(value)
+```
+
+## Remove Largest Value
+
+```python
+my_list.sort()
+my_list.pop()
+```
+
+## Insert At Front
+
+```python
+my_list.insert(0, value)
+```
+
+## Add To End
+
+```python
+my_list.append(value)
 ```
 
 ---
 
-## Loop through a list with numbers
+# MEMORY KEYS
 
-```python
-names = ["Alex", "Connor", "Sam"]
+```text
+len()      = how many?
+min()      = smallest?
+max()      = biggest?
+sum()      = add them up
 
-for index, name in enumerate(names):
-    print(index, name)
+sorted()   = sorted copy
+sort()     = sort original
+
+append()   = add one
+extend()   = add many
+insert()   = add at spot
+
+remove()   = remove by value
+pop()      = remove by index
+
+count()    = how many?
+index()    = where is it?
+
+split()    = string -> list
+join()     = list -> string
+
+get()      = safe dictionary lookup
+
+[:]        = copy
+[::-1]     = reverse
+
+[0]        = first item
+[-1]       = last item
 ```
-
----
-
-## Check if input is a number
-
-```python
-user_input = input("Enter a number: ")
-
-if user_input.isdigit():
-    number = int(user_input)
-    print(number)
-else:
-    print("That is not a number.")
-```
-
----
-
-# Big Beginner Rule
-
-If the method has a dot before it, like this:
-
-```python
-my_list.append(4)
-```
-
-It belongs to that object.
-
-If it looks like this:
-
-```python
-len(my_list)
-```
-
-It is a built-in function that can work on different objects.
