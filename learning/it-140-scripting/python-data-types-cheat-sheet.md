@@ -177,14 +177,3 @@ Think of it as Python's way of saying "nothing is here."
 6. Dictionary
 7. Tuple
 8. Set
-
-If you're in an intro Python course like IT-140, you'll spend about 90% of your time working with:
-
-- Strings
-- Integers
-- Floats
-- Booleans
-- Lists
-- Dictionaries
-
-Everything else is useful but appears less frequently.
