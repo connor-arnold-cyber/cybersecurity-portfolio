@@ -6,9 +6,17 @@ The Open Systems Interconnection (OSI) Model is a seven-layer framework used to 
 
 Although modern networks use the TCP/IP model, the OSI Model remains the industry standard for learning networking and troubleshooting.
 
----
+## Key Concepts
 
-## Layers
+- Seven-Layer Networking Model
+- Encapsulation
+- Decapsulation
+- Protocols
+- Network Devices
+- Data Flow
+- Troubleshooting
+
+### Layers
 
 | Layer | Name | Primary Function | Common Examples |
 |--------|------|------------------|-----------------|
@@ -20,56 +28,41 @@ Although modern networks use the TCP/IP model, the OSI Model remains the industr
 | 2 | Data Link | Transfers frames between devices on the same network. | Ethernet, MAC Addresses, Switches |
 | 1 | Physical | Transmits raw bits over physical media. | Cables, Fiber, Wireless Signals |
 
----
-
-## How Data Moves Through the OSI Model
-
-When sending data:
-
-Application → Presentation → Session → Transport → Network → Data Link → Physical
-
-When receiving data:
-
-Physical → Data Link → Network → Transport → Session → Presentation → Application
-
-This process is known as **encapsulation** and **decapsulation**.
-
----
-
-## Common Devices
-
-| Device | OSI Layer |
-|----------|-----------|
-| Hub | Layer 1 |
-| Switch | Layer 2 |
-| Router | Layer 3 |
-| Firewall | Layers 3–7 (depending on type) |
-
----
-
 ## Why It Matters
 
-Understanding the OSI Model helps you:
+The OSI Model provides a standardized way to understand how networks function and communicate. It is one of the most important troubleshooting frameworks in networking because it helps isolate where communication problems occur.
 
-- Troubleshoot network problems
-- Understand where protocols operate
-- Identify where attacks occur
-- Understand how data moves through a network
+Even though real-world networks use the TCP/IP model, cybersecurity professionals, network engineers, and certification exams frequently reference the OSI Model.
 
-Nearly every networking certification, including Network+, Security+, and CCNA, expects a solid understanding of the OSI Model.
+## Common Uses
 
----
+- Network Troubleshooting
+- Learning Network Protocols
+- Understanding Packet Flow
+- Mapping Network Devices
+- Cybersecurity Training
+- CompTIA Network+
+- CompTIA Security+
+- Cisco CCNA
+
+## Best Practices
+
+- Understand the primary responsibility of each layer.
+- Learn which common protocols and devices operate at each layer.
+- Use the model to troubleshoot network issues logically, starting at the most likely layer.
+- Focus on understanding how data moves through the layers rather than memorizing them in isolation.
 
 ## Related Concepts
 
 - TCP/IP Model
 - Encapsulation
+- Decapsulation
 - Packets
 - Frames
 - IP Addressing
 - Ports and Protocols
-
----
+- Switching
+- Routing
 
 ## Related Labs & Projects
 
