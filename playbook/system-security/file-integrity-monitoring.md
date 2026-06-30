@@ -34,10 +34,11 @@ Attackers often modify critical system files after compromising a device. File I
 
 ## Related Concepts
 
-- Hashing
-- System Hardening
-- Logging
-- Intrusion Detection
+- [Hashing](../data-security/hashing.md) — Generates hash values used to detect unauthorized file changes.
+- System Hardening *(Coming Soon)* — Reduces the attack surface and protects critical system files.
+- Intrusion Detection Systems (IDS) *(Coming Soon)* — Detect suspicious activity, including unexpected file modifications.
+- Logging *(Coming Soon)* — Records security events that help investigate detected changes.
+- Tripwire *(Coming Soon)* — A popular File Integrity Monitoring tool.
 
 ## Related Labs & Projects
 
