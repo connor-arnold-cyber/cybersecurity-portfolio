@@ -34,8 +34,6 @@ Hashing allows systems to detect unauthorized changes to data. Even a one-charac
 
 ## Related Concepts
 
-## Related Concepts
-
 - [Encryption](encryption.md) — Protects confidentiality by converting plaintext into ciphertext.
 - [Digital Signatures](digital-signatures.md) — Use hashing to verify authenticity, integrity, and non-repudiation.
 - [File Integrity Monitoring](../system-security/file-integrity-monitoring.md) — Uses hashes to detect unauthorized changes to files.
