@@ -12,7 +12,8 @@ Most modern secure communication uses hybrid encryption.
 - Session Key
 - Public Key
 - Private Key
-- Symmetric Encryption
+- [Symmetric Encryption](symmetric-encryption.md)
+- [Asymmetric Encryption](asymmetric-encryption.md)
 
 ## Why It Matters
 
