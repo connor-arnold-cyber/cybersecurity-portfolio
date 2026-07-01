@@ -23,7 +23,7 @@ Digital signatures allow recipients to verify that a message truly came from the
 - Signed Software
 - Email Security
 - Code Signing
-- Digital Certificates
+- [Digital Certificates](../../connection-security/concepts/digital-certificates.md)
 - Financial Transactions
 
 ## Best Practices
