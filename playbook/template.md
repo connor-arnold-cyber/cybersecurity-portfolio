@@ -10,6 +10,4 @@
 
 ## Best Practices
 
-## Related Concepts
-
 ## Related Labs & Projects
