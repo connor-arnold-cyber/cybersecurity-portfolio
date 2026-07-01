@@ -10,7 +10,7 @@ Digital certificates are a fundamental part of Public Key Infrastructure (PKI).
 
 - Public Key
 - [Certificate Authority (CA)](certificate-authority.md)
-- [Digital Signature](../../data-security/concepts/digital-signature.md)
+- [Digital Signature](../../data-security/concepts/digital-signatures.md)
 - Subject
 - Expiration Date
 
