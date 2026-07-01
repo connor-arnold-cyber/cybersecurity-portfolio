@@ -8,7 +8,7 @@ Certificate Authorities are a core component of Public Key Infrastructure (PKI).
 
 ## Key Concepts
 
-- Digital Certificates
+- [Digital Certificates](digital-certificates.md)
 - Certificate Signing Request (CSR)
 - Root CA
 - Intermediate CA
