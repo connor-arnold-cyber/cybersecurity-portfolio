@@ -52,18 +52,6 @@ Even though real-world networks use the TCP/IP model, cybersecurity professional
 - Use the model to troubleshoot network issues logically, starting at the most likely layer.
 - Focus on understanding how data moves through the layers rather than memorizing them in isolation.
 
-## Related Concepts
-
-- TCP/IP Model
-- Encapsulation
-- Decapsulation
-- Packets
-- Frames
-- IP Addressing
-- Ports and Protocols
-- Switching
-- Routing
-
 ## Related Labs & Projects
 
 - Cisco Packet Tracer
