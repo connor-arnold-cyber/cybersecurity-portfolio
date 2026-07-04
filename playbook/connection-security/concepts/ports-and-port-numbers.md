@@ -4,8 +4,6 @@
 
 Ports identify the service or application receiving network traffic on a device. While an IP address identifies the host, a port identifies the specific process or service. Security professionals constantly use port numbers during troubleshooting, firewall configuration, packet analysis, and penetration testing.
 
----
-
 ## Why It Matters
 
 Knowing common ports allows you to:
@@ -16,8 +14,6 @@ Knowing common ports allows you to:
 - Configure firewall rules
 - Perform port scanning
 - Troubleshoot connectivity issues
-
----
 
 ## Common Ports
 
@@ -59,8 +55,6 @@ Knowing common ports allows you to:
 | 5900 | TCP | VNC | ⚠️ | Remote desktop |
 | 8080 | TCP | HTTP Alternate | — | Web proxies & development servers |
 
----
-
 ## Ports Worth Memorizing
 
 These are the ports almost every cybersecurity professional should know by memory:
@@ -93,8 +87,6 @@ These are the ports almost every cybersecurity professional should know by memor
 - 5900 — VNC
 - 8080 — HTTP Alternate
 
----
-
 ## Security Notes
 
 - Prefer encrypted protocols whenever possible.
@@ -102,8 +94,6 @@ These are the ports almost every cybersecurity professional should know by memor
 - Never expose management services (SSH, RDP, VNC, database ports) directly to the Internet unless absolutely necessary.
 - Unexpected open ports often indicate misconfiguration or compromise.
 - Port scanning is one of the first steps in penetration testing and incident response.
-
----
 
 ## Related Labs & Projects
 
