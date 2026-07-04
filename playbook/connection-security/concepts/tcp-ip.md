@@ -2,83 +2,40 @@
 
 ## Overview
 
-TCP/IP is the core suite of networking protocols that enables devices to communicate across local networks and the Internet. Rather than being a single protocol, TCP/IP is a collection of protocols that work together to move data reliably between devices.
-
-The TCP/IP model consists of four layers:
-
-1. Application
-2. Transport
-3. Internet
-4. Network Access
-
-Each layer performs a specific function while communicating with the layers above and below it.
-
----
+TCP/IP is the standard suite of networking protocols used for communication across local networks and the Internet. Rather than being a single protocol, TCP/IP is a collection of protocols that work together to move data between devices. It provides the foundation for nearly all modern network communication.
 
 ## Key Concepts
 
-- Protocol suite
-- Four-layer model
+- Four-layer TCP/IP model
+- Application layer
+- Transport layer
+- Internet layer
+- Network Access layer
 - Encapsulation
-- Decapsulation
-- IP addressing
 - Routing
-- End-to-end communication
-
----
 
 ## Why It Matters
 
-Nearly every cybersecurity task depends on TCP/IP.
-
-Understanding TCP/IP is essential for:
-
-- Network troubleshooting
-- Packet analysis
-- Port scanning
-- Firewall configuration
-- IDS/IPS monitoring
-- Incident response
-- Penetration testing
-
-Most attacks and defensive tools operate somewhere within the TCP/IP stack.
-
----
+Almost every cybersecurity tool and attack relies on TCP/IP. Whether you're analyzing packets, scanning ports, configuring firewalls, or investigating incidents, you'll be working with TCP/IP.
 
 ## Common Uses
 
-- Internet communication
-- Local Area Networks (LANs)
-- Remote administration
-- Email
 - Web browsing
+- Email
 - File transfers
-- DNS lookups
-
----
+- Remote administration
+- Network communication
+- Internet connectivity
 
 ## Best Practices
 
-- Understand which protocols operate at each layer.
-- Know how data is encapsulated as it moves through the stack.
-- Learn which attacks target each layer.
-- Use packet capture tools like Wireshark to observe TCP/IP in action.
-
----
-
-## Related Concepts
-
-- OSI Model
-- TCP vs UDP
-- Three-Way Handshake
-- IPv4 Addressing
-- ICMP
-- Ports and Port Numbers
-
----
+- Understand the responsibility of each layer.
+- Learn which protocols operate at each layer.
+- Use packet captures to observe TCP/IP traffic.
+- Understand how data is encapsulated and routed.
 
 ## Related Labs & Projects
 
 - Wireshark Packet Analysis
-- Network Traffic Capture
-- Port Scanning
+- Packet Capture Lab
+- Network Traffic Analysis
