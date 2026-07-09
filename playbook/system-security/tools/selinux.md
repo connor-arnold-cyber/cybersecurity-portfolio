@@ -4,8 +4,6 @@
 
 (Security-Enhanced Linux overview...)
 
----
-
 ## Why SELinux Exists
 
 Traditional Linux permissions use Discretionary Access Control (DAC).
@@ -18,8 +16,6 @@ Example:
 - File permissions allow reading.
 - SELinux policy still blocks access.
 
----
-
 ## Key Concepts
 
 - Mandatory Access Control (MAC)
@@ -30,8 +26,6 @@ Example:
 - Least privilege
 - Process isolation
 
----
-
 ## Operating Modes
 
 | Mode | Description |
@@ -39,8 +33,6 @@ Example:
 | Enforcing | Policies are enforced. Unauthorized actions are blocked. |
 | Permissive | Violations are logged but not blocked. |
 | Disabled | SELinux is turned off. |
-
----
 
 # Checking SELinux
 
@@ -57,8 +49,6 @@ Displays:
 - Config file mode
 - Loaded policy
 
----
-
 ## Quick mode check
 
 ```bash
@@ -70,8 +60,6 @@ Returns:
 - Enforcing
 - Permissive
 - Disabled
-
----
 
 ## Switch modes (temporary)
 
@@ -88,8 +76,6 @@ sudo setenforce 0
 ```
 
 Changes last until reboot.
-
----
 
 # Viewing Security Contexts
 
@@ -111,8 +97,6 @@ View directory labels recursively:
 ls -RZ
 ```
 
----
-
 View process labels:
 
 ```bash
@@ -120,8 +104,6 @@ ps auxZ
 ```
 
 Shows which SELinux domain each process is running under.
-
----
 
 # Managing Contexts
 
@@ -144,8 +126,6 @@ Example:
 sudo chcon -Rv -t httpd_sys_content_t /website
 ```
 
----
-
 Restore default context:
 
 ```bash
@@ -157,8 +137,6 @@ Recursive:
 ```bash
 sudo restorecon -Rv directory
 ```
-
----
 
 # Managing Policies
 
@@ -185,8 +163,6 @@ Disable:
 ```bash
 sudo setsebool -P httpd_enable_homedirs off
 ```
-
----
 
 # Managing Ports
 
@@ -220,8 +196,6 @@ Modify a port:
 sudo semanage port -m -t http_port_t -p tcp 8080
 ```
 
----
-
 # Troubleshooting
 
 View recent AVC denials:
@@ -236,8 +210,6 @@ Generate policy suggestions:
 audit2allow
 ```
 
----
-
 # Common Workflow
 
 1. Check SELinux status.
@@ -247,8 +219,6 @@ audit2allow
 5. Correct labels or policies.
 6. Test again.
 
----
-
 # Best Practices
 
 - Leave SELinux in Enforcing mode.
@@ -256,8 +226,6 @@ audit2allow
 - Avoid disabling SELinux.
 - Use least privilege.
 - Keep labels consistent.
-
----
 
 # Memorize
 
@@ -283,8 +251,6 @@ Concepts:
 - Policy
 - AVC Denial
 
----
-
 # Related Concepts
 
 - Linux Permissions (DAC)
@@ -292,8 +258,6 @@ Concepts:
 - Linux Hardening
 - Principle of Least Privilege
 - Access Control
-
----
 
 # Related Labs & Projects
 
