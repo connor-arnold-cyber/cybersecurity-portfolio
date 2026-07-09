@@ -86,8 +86,6 @@ Example:
 cat logfile.txt | grep ERROR
 ```
 
----
-
 # Variables
 
 ```bash
