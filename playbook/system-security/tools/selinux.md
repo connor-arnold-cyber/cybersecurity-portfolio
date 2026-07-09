@@ -175,5 +175,3 @@ Allows Apache to use TCP port 50080.
 ## Related Labs & Projects
 
 - Securing Linux Devices Lab
-- Apache Web Server Hardening
-- Linux Server Administration
