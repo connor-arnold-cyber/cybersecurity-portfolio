@@ -28,6 +28,93 @@ A quick-reference guide for commonly used Bash commands and syntax.
 | `rm file` | Delete file |
 | `rm -r directory` | Delete directory recursively |
 
+# Compression & Archiving
+
+## gzip (Compress Single Files)
+
+| Command | Description |
+|----------|-------------|
+| `gzip file` | Compress file (removes original) |
+| `gzip -k file` | Compress and keep original |
+| `gunzip file.gz` | Decompress file |
+| `gunzip -k file.gz` | Decompress and keep compressed copy |
+| `gzip -d file.gz` | Same as `gunzip` |
+| `gzip -l file.gz` | View compression information |
+
+## zip (Archive + Compress)
+
+| Command | Description |
+|----------|-------------|
+| `zip archive.zip file` | Create ZIP archive |
+| `zip archive.zip file1 file2` | Archive multiple files |
+| `zip -r archive.zip directory/` | Archive directory recursively |
+| `zip -u archive.zip file` | Update archive with newer file |
+| `zip -d archive.zip file` | Remove file from archive |
+| `unzip archive.zip` | Extract archive |
+| `unzip archive.zip -d directory/` | Extract to another directory |
+| `unzip -l archive.zip` | List archive contents |
+| `unzip -t archive.zip` | Test archive integrity |
+
+## tar (Archive Only)
+
+| Command | Description |
+|----------|-------------|
+| `tar -cf archive.tar files` | Create archive |
+| `tar -xf archive.tar` | Extract archive |
+| `tar -tf archive.tar` | List archive contents |
+| `tar -cvf archive.tar files` | Create archive (verbose) |
+| `tar -xvf archive.tar` | Extract archive (verbose) |
+| `tar -xf archive.tar -C directory/` | Extract to another directory |
+
+## tar + gzip (.tar.gz)
+
+| Command | Description |
+|----------|-------------|
+| `tar -czf archive.tar.gz files` | Create compressed archive |
+| `tar -xzf archive.tar.gz` | Extract compressed archive |
+| `tar -tzf archive.tar.gz` | List archive contents |
+
+## tar + bzip2 (.tar.bz2)
+
+| Command | Description |
+|----------|-------------|
+| `tar -cjf archive.tar.bz2 files` | Create compressed archive |
+| `tar -xjf archive.tar.bz2` | Extract compressed archive |
+| `tar -tjf archive.tar.bz2` | List archive contents |
+
+## tar + xz (.tar.xz)
+
+| Command | Description |
+|----------|-------------|
+| `tar -cJf archive.tar.xz files` | Create compressed archive |
+| `tar -xJf archive.tar.xz` | Extract compressed archive |
+| `tar -tJf archive.tar.xz` | List archive contents |
+
+## Common tar Options
+
+| Option | Description |
+|---------|-------------|
+| `-c` | Create archive |
+| `-x` | Extract archive |
+| `-t` | List archive contents |
+| `-f` | Specify archive filename |
+| `-v` | Verbose output |
+| `-z` | Use gzip (`.gz`) |
+| `-j` | Use bzip2 (`.bz2`) |
+| `-J` | Use xz (`.xz`) |
+| `-C` | Extract to directory |
+
+## Common Archive Formats
+
+| Extension | Description |
+|-----------|-------------|
+| `.gz` | Gzip compressed file |
+| `.zip` | ZIP archive |
+| `.tar` | Archive only (no compression) |
+| `.tar.gz` / `.tgz` | Tar archive compressed with gzip |
+| `.tar.bz2` | Tar archive compressed with bzip2 |
+| `.tar.xz` | Tar archive compressed with xz |
+
 # Viewing Files
 
 | Command | Description |
