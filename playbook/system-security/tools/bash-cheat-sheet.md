@@ -4,8 +4,6 @@ A quick-reference guide for commonly used Bash commands and syntax.
 
 > This is a reference, not a tutorial.
 
----
-
 # Navigation
 
 | Command | Description |
@@ -17,8 +15,6 @@ A quick-reference guide for commonly used Bash commands and syntax.
 | `cd ..` | Go up one directory |
 | `cd ~` | Go to home directory |
 | `clear` | Clear the terminal |
-
----
 
 # File & Directory Management
 
@@ -32,8 +28,6 @@ A quick-reference guide for commonly used Bash commands and syntax.
 | `rm file` | Delete file |
 | `rm -r directory` | Delete directory recursively |
 
----
-
 # Viewing Files
 
 | Command | Description |
@@ -44,8 +38,6 @@ A quick-reference guide for commonly used Bash commands and syntax.
 | `tail file` | Last 10 lines |
 | `tail -f file` | Follow file as it grows |
 
----
-
 # Searching
 
 | Command | Description |
@@ -54,8 +46,6 @@ A quick-reference guide for commonly used Bash commands and syntax.
 | `grep "text" file` | Search text in file |
 | `grep -r "text" directory` | Search recursively |
 
----
-
 # Permissions
 
 | Command | Description |
@@ -63,8 +53,6 @@ A quick-reference guide for commonly used Bash commands and syntax.
 | `chmod +x file` | Make executable |
 | `chmod 755 file` | Set permissions |
 | `chown user file` | Change owner |
-
----
 
 # Processes
 
@@ -75,8 +63,6 @@ A quick-reference guide for commonly used Bash commands and syntax.
 | `kill PID` | Terminate process |
 | `kill -9 PID` | Force terminate process |
 
----
-
 # Networking
 
 | Command | Description |
@@ -84,8 +70,6 @@ A quick-reference guide for commonly used Bash commands and syntax.
 | `ping host` | Test connectivity |
 | `ip addr` | Show IP addresses |
 | `ss -tuln` | Show listening ports |
-
----
 
 # Redirection & Pipes
 
@@ -112,8 +96,6 @@ name="Connor"
 echo $name
 ```
 
----
-
 # Exit Status
 
 ```bash
@@ -123,8 +105,6 @@ echo $?
 - `0` = Success
 - Non-zero = Failure
 
----
-
 # Conditionals
 
 ```bash
@@ -133,8 +113,6 @@ then
     command
 fi
 ```
-
----
 
 # Test Operators
 
@@ -169,8 +147,6 @@ fi
 | `-w` | Writable |
 | `-x` | Executable |
 
----
-
 # Logical Operators
 
 | Operator | Meaning |
@@ -178,8 +154,6 @@ fi
 | `&&` | AND |
 | `\|\|` | OR |
 | `!` | NOT |
-
----
 
 # Wildcards
 
@@ -189,8 +163,6 @@ fi
 | `?` | Exactly one character |
 | `[abc]` | One matching character |
 
----
-
 # Environment Variables
 
 ```bash
@@ -199,8 +171,6 @@ echo $PATH
 export VARIABLE=value
 ```
 
----
-
 # Help
 
 | Command | Description |
@@ -208,8 +178,6 @@ export VARIABLE=value
 | `man command` | Manual page |
 | `command --help` | Built-in help |
 | `help builtin` | Help for Bash built-ins |
-
----
 
 # Keyboard Shortcuts
 
@@ -220,8 +188,6 @@ export VARIABLE=value
 | `Ctrl + C` | Stop current command |
 | `Ctrl + L` | Clear screen |
 | `Ctrl + R` | Search command history |
-
----
 
 # Core Commands to Memorize
 
