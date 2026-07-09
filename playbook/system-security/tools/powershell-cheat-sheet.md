@@ -4,8 +4,6 @@ A quick-reference guide for commonly used PowerShell commands.
 
 > This is a reference, not a tutorial.
 
----
-
 # Navigation
 
 | Command | Description |
@@ -18,8 +16,6 @@ A quick-reference guide for commonly used PowerShell commands.
 | `cd folder` | Alias for Set-Location |
 | `Clear-Host` | Clear the console |
 | `cls` | Alias for Clear-Host |
-
----
 
 # File & Directory Management
 
@@ -37,8 +33,6 @@ A quick-reference guide for commonly used PowerShell commands.
 | `Remove-Item file` | Delete file or folder |
 | `rm file` | Alias for Remove-Item |
 
----
-
 # Viewing Files
 
 | Command | Description |
@@ -46,8 +40,6 @@ A quick-reference guide for commonly used PowerShell commands.
 | `Get-Content file.txt` | Display file contents |
 | `cat file.txt` | Alias for Get-Content |
 | `gc file.txt` | Alias for Get-Content |
-
----
 
 # Searching
 
@@ -58,8 +50,6 @@ A quick-reference guide for commonly used PowerShell commands.
 | `Get-Command name` | Find available commands |
 | `Get-Help command` | View help |
 
----
-
 # Networking
 
 | Command | Description |
@@ -69,8 +59,6 @@ A quick-reference guide for commonly used PowerShell commands.
 | `Resolve-DnsName domain` | DNS lookup |
 | `Get-NetTCPConnection` | View TCP connections |
 | `Get-NetAdapter` | View network adapters |
-
----
 
 # Processes & Services
 
@@ -85,8 +73,6 @@ A quick-reference guide for commonly used PowerShell commands.
 | `Stop-Service ServiceName` | Stop service |
 | `Restart-Service ServiceName` | Restart service |
 
----
-
 # System Information
 
 | Command | Description |
@@ -98,8 +84,6 @@ A quick-reference guide for commonly used PowerShell commands.
 | `$env:COMPUTERNAME` | Computer name variable |
 | `$env:USERNAME` | Current username |
 
----
-
 # Users
 
 | Command | Description |
@@ -108,8 +92,6 @@ A quick-reference guide for commonly used PowerShell commands.
 | `New-LocalUser` | Create local user |
 | `Set-LocalUser` | Modify local user |
 | `Remove-LocalUser` | Delete local user |
-
----
 
 # Active Directory (Windows Server)
 
@@ -121,8 +103,6 @@ A quick-reference guide for commonly used PowerShell commands.
 | `Remove-ADUser` | Delete AD user |
 | `Get-ADGroup` | View AD groups |
 
----
-
 # Environment Variables
 
 | Command | Description |
@@ -131,8 +111,6 @@ A quick-reference guide for commonly used PowerShell commands.
 | `$env:PATH` | Display PATH |
 | `$env:VARIABLE` | Display variable |
 | `$env:VARIABLE="Value"` | Set variable (current session) |
-
----
 
 # Pipeline
 
@@ -146,8 +124,6 @@ Get-Process | Sort-Object CPU
 Get-Service | Where-Object Status -eq "Running"
 ```
 
----
-
 # Variables
 
 ```powershell
@@ -155,8 +131,6 @@ $name = "Connor"
 
 $name
 ```
-
----
 
 # Conditionals
 
@@ -172,8 +146,6 @@ else {
 }
 ```
 
----
-
 # Comparison Operators
 
 | Operator | Meaning |
@@ -185,8 +157,6 @@ else {
 | `-ge` | Greater than or equal |
 | `-le` | Less than or equal |
 
----
-
 # Logical Operators
 
 | Operator | Meaning |
@@ -194,8 +164,6 @@ else {
 | `-and` | AND |
 | `-or` | OR |
 | `-not` | NOT |
-
----
 
 # Help
 
@@ -216,8 +184,6 @@ Get-Help Get-Process -Examples
 Get-Command *service*
 ```
 
----
-
 # Keyboard Shortcuts
 
 | Shortcut | Action |
@@ -227,8 +193,6 @@ Get-Command *service*
 | `Ctrl + C` | Cancel command |
 | `Ctrl + L` | Clear console |
 | `Ctrl + R` | Search history |
-
----
 
 # Core Commands to Memorize
 
