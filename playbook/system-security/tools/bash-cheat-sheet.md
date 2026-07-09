@@ -103,6 +103,7 @@ A quick-reference guide for commonly used Bash commands and syntax.
 | `-j` | Use bzip2 (`.bz2`) |
 | `-J` | Use xz (`.xz`) |
 | `-C` | Extract to directory |
+| `-d` | Decompress |
 
 ## Common Archive Formats
 
