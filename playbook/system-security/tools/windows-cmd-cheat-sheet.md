@@ -4,8 +4,6 @@ A quick-reference guide for commonly used Windows Command Prompt (CMD) commands.
 
 > This is a reference, not a tutorial.
 
----
-
 # Navigation
 
 | Command | Description |
@@ -16,8 +14,6 @@ A quick-reference guide for commonly used Windows Command Prompt (CMD) commands.
 | `dir` | List files and folders |
 | `cls` | Clear the screen |
 | `tree` | Display directory structure |
-
----
 
 # File & Directory Management
 
@@ -34,8 +30,6 @@ A quick-reference guide for commonly used Windows Command Prompt (CMD) commands.
 | `del file` | Delete file |
 | `type file` | Display file contents |
 
----
-
 # Searching
 
 | Command | Description |
@@ -44,8 +38,6 @@ A quick-reference guide for commonly used Windows Command Prompt (CMD) commands.
 | `findstr "text" file` | Advanced text search |
 | `where program` | Locate executable |
 | `dir /s filename` | Find file recursively |
-
----
 
 # Networking
 
@@ -61,8 +53,6 @@ A quick-reference guide for commonly used Windows Command Prompt (CMD) commands.
 | `nslookup domain` | Query DNS |
 | `netstat -ano` | View network connections and listening ports |
 
----
-
 # Processes
 
 | Command | Description |
@@ -71,8 +61,6 @@ A quick-reference guide for commonly used Windows Command Prompt (CMD) commands.
 | `taskkill /PID pid` | End process by PID |
 | `taskkill /IM process.exe` | End process by name |
 | `start program` | Launch program |
-
----
 
 # System Information
 
@@ -85,8 +73,6 @@ A quick-reference guide for commonly used Windows Command Prompt (CMD) commands.
 | `echo %USERNAME%` | Show current username |
 | `echo %COMPUTERNAME%` | Show computer name |
 
----
-
 # Users & Permissions
 
 | Command | Description |
@@ -96,8 +82,6 @@ A quick-reference guide for commonly used Windows Command Prompt (CMD) commands.
 | `net localgroup` | List local groups |
 | `net localgroup Administrators` | View Administrators group |
 
----
-
 # Environment Variables
 
 | Command | Description |
@@ -106,8 +90,6 @@ A quick-reference guide for commonly used Windows Command Prompt (CMD) commands.
 | `set VAR=value` | Create variable (current session) |
 | `echo %PATH%` | Display PATH variable |
 | `echo %VARIABLE%` | Display variable value |
-
----
 
 # Redirection & Pipes
 
@@ -124,8 +106,6 @@ Example:
 ipconfig | findstr IPv4
 ```
 
----
-
 # Batch Variables
 
 ```cmd
@@ -133,8 +113,6 @@ set NAME=Connor
 
 echo %NAME%
 ```
-
----
 
 # Conditional Operators
 
@@ -150,8 +128,6 @@ Example:
 mkdir Logs && cd Logs
 ```
 
----
-
 # Wildcards
 
 | Wildcard | Meaning |
@@ -166,8 +142,6 @@ dir *.txt
 
 del file?.txt
 ```
-
----
 
 # Help
 
@@ -186,8 +160,6 @@ ipconfig /?
 tasklist /?
 ```
 
----
-
 # Keyboard Shortcuts
 
 | Shortcut | Action |
@@ -198,8 +170,6 @@ tasklist /?
 | `F7` | Command history |
 | `Ctrl + C` | Cancel current command |
 | `cls` | Clear screen |
-
----
 
 # Core Commands to Memorize
 
