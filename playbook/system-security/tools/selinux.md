@@ -2,53 +2,49 @@
 
 ## Overview
 
-Security-Enhanced Linux (SELinux) is a Mandatory Access Control (MAC) security framework built into many Linux distributions, including Red Hat Enterprise Linux, AlmaLinux, Rocky Linux, and CentOS.
+(Security-Enhanced Linux overview...)
 
-Unlike traditional Linux permissions, SELinux restricts what applications, users, and processes are allowed to access—even if normal file permissions would allow it.
+---
+
+## Why SELinux Exists
+
+Traditional Linux permissions use Discretionary Access Control (DAC).
+
+SELinux adds Mandatory Access Control (MAC), allowing the operating system to enforce security policies even if normal file permissions would otherwise allow access.
+
+Example:
+
+- User owns a file.
+- File permissions allow reading.
+- SELinux policy still blocks access.
+
+---
 
 ## Key Concepts
 
 - Mandatory Access Control (MAC)
 - Security contexts (labels)
+- Policies
+- Types
+- Domains
 - Least privilege
-- Policy enforcement
 - Process isolation
+
+---
 
 ## Operating Modes
 
-### Enforcing
+| Mode | Description |
+|------|-------------|
+| Enforcing | Policies are enforced. Unauthorized actions are blocked. |
+| Permissive | Violations are logged but not blocked. |
+| Disabled | SELinux is turned off. |
 
-SELinux actively enforces security policies and blocks unauthorized actions.
+---
 
-### Permissive
+# Checking SELinux
 
-SELinux allows actions but logs policy violations for troubleshooting.
-
-### Disabled
-
-SELinux is completely disabled.
-
-## Security Contexts
-
-SELinux assigns every file, directory, process, and port a security context (label).
-
-Example:
-
-```
-httpd_sys_content_t
-```
-
-Apache can only access files with the correct context.
-
-Contexts can be viewed using:
-
-```bash
-ls -lZ
-```
-
-## Common Commands
-
-### Check SELinux status
+## Check overall status
 
 ```bash
 sestatus
@@ -56,20 +52,20 @@ sestatus
 
 Displays:
 
-- Whether SELinux is enabled
+- Enabled/disabled
 - Current mode
-- Configuration mode
+- Config file mode
 - Loaded policy
 
 ---
 
-### Show current mode
+## Quick mode check
 
 ```bash
 getenforce
 ```
 
-Possible output:
+Returns:
 
 - Enforcing
 - Permissive
@@ -77,101 +73,228 @@ Possible output:
 
 ---
 
-### Temporarily enable enforcing mode
+## Switch modes (temporary)
+
+Enable enforcing:
 
 ```bash
 sudo setenforce 1
 ```
 
----
-
-### Temporarily enable permissive mode
+Enable permissive:
 
 ```bash
 sudo setenforce 0
 ```
 
-or
-
-```bash
-sudo setenforce permissive
-```
-
-Changes last until the next reboot.
+Changes last until reboot.
 
 ---
 
-### View security contexts
+# Viewing Security Contexts
+
+View file labels:
+
+```bash
+ls -Z
+```
+
+Long format:
 
 ```bash
 ls -lZ
 ```
 
-Lists SELinux labels for files and directories.
+View directory labels recursively:
+
+```bash
+ls -RZ
+```
 
 ---
 
-### View process contexts
+View process labels:
 
 ```bash
 ps auxZ
 ```
 
-Displays SELinux labels for running processes.
+Shows which SELinux domain each process is running under.
 
 ---
 
-### Change a security context
+# Managing Contexts
+
+Temporarily change a context:
 
 ```bash
-sudo chcon -Rv --type=httpd_sys_content_t /website
+sudo chcon -t TYPE file
 ```
 
-Changes the context label so Apache can access the directory.
+Common options:
+
+- `-t` → Change type
+- `-u` → Change SELinux user
+- `-r` → Change role
+- `-Rv` → Recursive + verbose
+
+Example:
+
+```bash
+sudo chcon -Rv -t httpd_sys_content_t /website
+```
 
 ---
 
-### View allowed ports
+Restore default context:
+
+```bash
+sudo restorecon file
+```
+
+Recursive:
+
+```bash
+sudo restorecon -Rv directory
+```
+
+---
+
+# Managing Policies
+
+List booleans:
+
+```bash
+getsebool -a
+```
+
+View one boolean:
+
+```bash
+getsebool httpd_enable_homedirs
+```
+
+Enable permanently:
+
+```bash
+sudo setsebool -P httpd_enable_homedirs on
+```
+
+Disable:
+
+```bash
+sudo setsebool -P httpd_enable_homedirs off
+```
+
+---
+
+# Managing Ports
+
+List all managed ports:
 
 ```bash
 sudo semanage port -l
 ```
 
----
-
-### Show only HTTP ports
+Search ports:
 
 ```bash
 sudo semanage port -l | grep http
 ```
 
----
-
-### Add a new allowed HTTP port
+Add a port:
 
 ```bash
 sudo semanage port -a -t http_port_t -p tcp 50080
 ```
 
-Allows Apache to use TCP port 50080.
+Delete a port:
 
-## Common Workflow
+```bash
+sudo semanage port -d -t http_port_t -p tcp 50080
+```
+
+Modify a port:
+
+```bash
+sudo semanage port -m -t http_port_t -p tcp 8080
+```
+
+---
+
+# Troubleshooting
+
+View recent AVC denials:
+
+```bash
+ausearch -m avc
+```
+
+Generate policy suggestions:
+
+```bash
+audit2allow
+```
+
+---
+
+# Common Workflow
 
 1. Check SELinux status.
-2. Verify current mode.
-3. Examine security contexts.
-4. Modify contexts if necessary.
-5. Configure policies or ports.
-6. Test the application.
+2. Confirm current mode.
+3. Examine labels.
+4. Review denial logs.
+5. Correct labels or policies.
+6. Test again.
 
-## Best Practices
+---
 
-- Leave SELinux in Enforcing mode whenever possible.
-- Use Permissive mode only for troubleshooting.
+# Best Practices
+
+- Leave SELinux in Enforcing mode.
+- Prefer restorecon over chcon for permanent fixes.
 - Avoid disabling SELinux.
-- Keep contexts properly labeled.
-- Follow the principle of least privilege.
+- Use least privilege.
+- Keep labels consistent.
 
-## Related Labs & Projects
+---
 
-- Securing Linux Devices Lab
+# Memorize
+
+Commands:
+
+- sestatus
+- getenforce
+- setenforce
+- ls -Z
+- ps auxZ
+- restorecon
+- chcon
+- semanage
+- getsebool
+- setsebool
+
+Concepts:
+
+- MAC
+- Security Context
+- Type
+- Domain
+- Policy
+- AVC Denial
+
+---
+
+# Related Concepts
+
+- Linux Permissions (DAC)
+- AppArmor
+- Linux Hardening
+- Principle of Least Privilege
+- Access Control
+
+---
+
+# Related Labs & Projects
+
+- CYB 300 Module 1 – Securing Linux Devices Lab
