@@ -13,6 +13,7 @@ Learn the fundamentals of writing Bash scripts.
 - [Exit Codes](#exit-codes)
 - [Conditionals](#conditionals)
 - [Case Statements](#case-statements)
+- [Select Menus](#select-menus)
 - [Loops](#loops)
 - [Functions](#functions)
 - [Useful Commands](#useful-commands)
@@ -142,6 +143,44 @@ case "$choice" in
     *) echo "Invalid" ;;
 esac
 ```
+
+## Select Menus
+
+The `select` statement automatically creates a numbered menu from a list of options. It is useful for simple interactive scripts.
+
+Example:
+
+```bash
+select option in Start Stop Quit
+do
+    case "$option" in
+        Start)
+            echo "Starting..."
+            ;;
+        Stop)
+            echo "Stopping..."
+            ;;
+        Quit)
+            echo "Goodbye!"
+            break
+            ;;
+        *)
+            echo "Invalid option."
+            ;;
+    esac
+done
+```
+
+Output:
+
+```text
+1) Start
+2) Stop
+3) Quit
+#?
+```
+
+The user's selection is stored in the specified variable (`option` in this example), while the number they entered is stored in the special variable `REPLY`.
 
 ## Loops
 
