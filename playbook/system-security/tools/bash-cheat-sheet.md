@@ -1,220 +1,285 @@
 # Bash Cheat Sheet
 
-A quick-reference guide for commonly used Bash commands and syntax.
+A simple reference for common Linux commands and basic Bash scripting.
 
-> This is a reference, not a tutorial.
+> This page is for quick reminders, not complete explanations.
 
 # Navigation
 
-| Command | Description |
-|----------|-------------|
-| `pwd` | Print current working directory |
-| `ls` | List directory contents |
-| `ls -la` | Long listing with hidden files |
-| `cd directory` | Change directory |
-| `cd ..` | Go up one directory |
-| `cd ~` | Go to home directory |
+| Command | What It Does |
+|---|---|
+| `pwd` | Show the current directory |
+| `ls` | List files and folders |
+| `ls -l` | Show a detailed list |
+| `ls -la` | Include hidden files |
+| `cd folder` | Enter a folder |
+| `cd ..` | Go up one folder |
+| `cd ~` | Go to your home directory |
 | `clear` | Clear the terminal |
 
-# File & Directory Management
+# Files and Directories
 
-| Command | Description |
-|----------|-------------|
-| `mkdir directory` | Create directory |
-| `rmdir directory` | Remove empty directory |
-| `touch file` | Create empty file |
-| `cp source destination` | Copy file |
-| `mv source destination` | Move or rename file |
-| `rm file` | Delete file |
-| `rm -r directory` | Delete directory recursively |
+| Command | What It Does |
+|---|---|
+| `touch file.txt` | Create an empty file |
+| `mkdir folder` | Create a folder |
+| `mkdir -p path/to/folder` | Create a folder and any missing parent folders |
+| `cp source destination` | Copy a file |
+| `cp -r source destination` | Copy a folder and its contents |
+| `mv old new` | Move or rename something |
+| `rm file.txt` | Delete a file |
+| `rm -r folder` | Delete a folder and its contents |
+| `rmdir folder` | Delete an empty folder |
 
-# Compression & Archiving
-
-## gzip (Compress Single Files)
-
-| Command | Description |
-|----------|-------------|
-| `gzip file` | Compress file (removes original) |
-| `gzip -k file` | Compress and keep original |
-| `gunzip file.gz` | Decompress file |
-| `gunzip -k file.gz` | Decompress and keep compressed copy |
-| `gzip -d file.gz` | Same as `gunzip` |
-| `gzip -l file.gz` | View compression information |
-
-## zip (Archive + Compress)
-
-| Command | Description |
-|----------|-------------|
-| `zip archive.zip file` | Create ZIP archive |
-| `zip archive.zip file1 file2` | Archive multiple files |
-| `zip -r archive.zip directory/` | Archive directory recursively |
-| `zip -u archive.zip file` | Update archive with newer file |
-| `zip -d archive.zip file` | Remove file from archive |
-| `unzip archive.zip` | Extract archive |
-| `unzip archive.zip -d directory/` | Extract to another directory |
-| `unzip -l archive.zip` | List archive contents |
-| `unzip -t archive.zip` | Test archive integrity |
-
-## tar (Archive Only)
-
-| Command | Description |
-|----------|-------------|
-| `tar -cf archive.tar files` | Create archive |
-| `tar -xf archive.tar` | Extract archive |
-| `tar -tf archive.tar` | List archive contents |
-| `tar -cvf archive.tar files` | Create archive (verbose) |
-| `tar -xvf archive.tar` | Extract archive (verbose) |
-| `tar -xf archive.tar -C directory/` | Extract to another directory |
-
-## tar + gzip (.tar.gz)
-
-| Command | Description |
-|----------|-------------|
-| `tar -czf archive.tar.gz files` | Create compressed archive |
-| `tar -xzf archive.tar.gz` | Extract compressed archive |
-| `tar -tzf archive.tar.gz` | List archive contents |
-
-## tar + bzip2 (.tar.bz2)
-
-| Command | Description |
-|----------|-------------|
-| `tar -cjf archive.tar.bz2 files` | Create compressed archive |
-| `tar -xjf archive.tar.bz2` | Extract compressed archive |
-| `tar -tjf archive.tar.bz2` | List archive contents |
-
-## tar + xz (.tar.xz)
-
-| Command | Description |
-|----------|-------------|
-| `tar -cJf archive.tar.xz files` | Create compressed archive |
-| `tar -xJf archive.tar.xz` | Extract compressed archive |
-| `tar -tJf archive.tar.xz` | List archive contents |
-
-## Common tar Options
-
-| Option | Description |
-|---------|-------------|
-| `-c` | Create archive |
-| `-x` | Extract archive |
-| `-t` | List archive contents |
-| `-f` | Specify archive filename |
-| `-v` | Verbose output |
-| `-z` | Use gzip (`.gz`) |
-| `-j` | Use bzip2 (`.bz2`) |
-| `-J` | Use xz (`.xz`) |
-| `-C` | Extract to directory |
-| `-d` | Decompress |
-
-## Common Archive Formats
-
-| Extension | Description |
-|-----------|-------------|
-| `.gz` | Gzip compressed file |
-| `.zip` | ZIP archive |
-| `.tar` | Archive only (no compression) |
-| `.tar.gz` / `.tgz` | Tar archive compressed with gzip |
-| `.tar.bz2` | Tar archive compressed with bzip2 |
-| `.tar.xz` | Tar archive compressed with xz |
+> Be careful with `rm`. Deleted files normally do not go to a recycle bin.
 
 # Viewing Files
 
-| Command | Description |
-|----------|-------------|
-| `cat file` | Display entire file |
-| `less file` | Scroll through file |
-| `head file` | First 10 lines |
-| `tail file` | Last 10 lines |
-| `tail -f file` | Follow file as it grows |
+| Command | What It Does |
+|---|---|
+| `cat file.txt` | Display the entire file |
+| `less file.txt` | View a file one screen at a time |
+| `head file.txt` | Show the first 10 lines |
+| `tail file.txt` | Show the last 10 lines |
+| `tail -f logfile` | Watch new lines as they are added |
+| `nano file.txt` | Open or create a file in Nano |
 
 # Searching
 
-| Command | Description |
-|----------|-------------|
-| `find . -name "file"` | Find file by name |
-| `grep "text" file` | Search text in file |
-| `grep -r "text" directory` | Search recursively |
+| Command | What It Does |
+|---|---|
+| `grep "text" file.txt` | Search inside a file |
+| `grep -i "text" file.txt` | Search without case sensitivity |
+| `grep -r "text" folder` | Search recursively through a folder |
+| `find . -name "file.txt"` | Find a file by name |
+| `find . -name "*.txt"` | Find files matching a pattern |
+| `which command` | Show the location of a command |
+| `command -v command` | Check whether a command exists |
 
-# Permissions
+# Users and Permissions
 
-| Command | Description |
-|----------|-------------|
-| `chmod +x file` | Make executable |
-| `chmod 755 file` | Set permissions |
-| `chown user file` | Change owner |
+| Command | What It Does |
+|---|---|
+| `whoami` | Show the current user |
+| `id` | Show user and group information |
+| `sudo command` | Run a command with elevated privileges |
+| `chmod +x script.sh` | Make a script executable |
+| `chmod 755 file` | Set numeric permissions |
+| `chown user file` | Change the owner |
+| `chown user:group file` | Change the owner and group |
 
-# Processes
+# Processes and Services
 
-| Command | Description |
-|----------|-------------|
-| `ps` | Running processes |
-| `ps aux` | Detailed process list |
-| `kill PID` | Terminate process |
-| `kill -9 PID` | Force terminate process |
+| Command | What It Does |
+|---|---|
+| `ps aux` | List running processes |
+| `top` | View live process activity |
+| `kill PID` | Ask a process to stop |
+| `kill -9 PID` | Force a process to stop |
+| `systemctl status service` | Check a service |
+| `sudo systemctl start service` | Start a service |
+| `sudo systemctl stop service` | Stop a service |
+| `sudo systemctl restart service` | Restart a service |
+| `sudo systemctl enable service` | Start a service automatically at boot |
 
 # Networking
 
-| Command | Description |
-|----------|-------------|
+| Command | What It Does |
+|---|---|
+| `ip addr` | Show IP addresses and interfaces |
 | `ping host` | Test connectivity |
-| `ip addr` | Show IP addresses |
-| `ss -tuln` | Show listening ports |
+| `ss -tuln` | Show listening TCP and UDP ports |
+| `curl URL` | Request or download data from a URL |
+| `wget URL` | Download a file |
+| `hostname` | Show the computer name |
 
-# Redirection & Pipes
+# Packages
 
-| Operator | Description |
-|----------|-------------|
-| `>` | Overwrite output |
-| `>>` | Append output |
-| `<` | Redirect input |
-| `|` | Pipe output to another command |
-
-Example:
+## Debian and Ubuntu
 
 ```bash
-cat logfile.txt | grep ERROR
+sudo apt update
+sudo apt install package
+sudo apt remove package
+```
+
+## Red Hat-Based Systems
+
+```bash
+sudo dnf install package
+sudo dnf remove package
+```
+
+# Compression
+
+These are the main commands worth keeping here:
+
+```bash
+zip -r archive.zip folder
+unzip archive.zip
+
+tar -czf archive.tar.gz folder
+tar -xzf archive.tar.gz
+```
+
+- `zip -r` creates a ZIP archive from a folder.
+- `unzip` extracts a ZIP archive.
+- `tar -czf` creates a compressed `.tar.gz` archive.
+- `tar -xzf` extracts a `.tar.gz` archive.
+
+# Redirection and Pipes
+
+| Operator | What It Does |
+|---|---|
+| `>` | Send output to a file and overwrite it |
+| `>>` | Append output to a file |
+| `2>` | Send error output to a file |
+| `2>/dev/null` | Discard error output |
+| `|` | Send one command's output into another command |
+| `<` | Use a file as input |
+
+Examples:
+
+```bash
+echo "Hello" > file.txt
+echo "Another line" >> file.txt
+grep "ERROR" logfile.txt > errors.txt
+cat logfile.txt | grep "ERROR"
+```
+
+A cleaner version of the last command is:
+
+```bash
+grep "ERROR" logfile.txt
+```
+
+# Command Chaining
+
+| Operator | Meaning |
+|---|---|
+| `;` | Run the next command regardless |
+| `&&` | Run the next command only if the first succeeds |
+| `||` | Run the next command only if the first fails |
+
+Examples:
+
+```bash
+mkdir Logs && cd Logs
+```
+
+```bash
+cp file backup/ || echo "Copy failed"
+```
+
+# Wildcards
+
+| Pattern | Meaning |
+|---|---|
+| `*` | Zero or more characters |
+| `?` | Exactly one character |
+| `[abc]` | One character from the list |
+| `[0-9]` | One number in the range |
+
+Examples:
+
+```bash
+ls *.txt
+rm file?.log
+ls report[0-9].txt
 ```
 
 # Variables
 
+Create a variable:
+
 ```bash
 name="Connor"
+```
 
-echo $name
+Use the variable:
+
+```bash
+echo "$name"
+```
+
+Do not place spaces around `=`:
+
+```bash
+name="Connor"       # Correct
+name = "Connor"     # Incorrect
+```
+
+Use braces when the variable touches other text:
+
+```bash
+echo "${name}_backup"
+```
+
+# Environment Variables
+
+```bash
+echo "$HOME"
+echo "$PATH"
+echo "$USER"
+```
+
+Create an environment variable for the current shell:
+
+```bash
+export VARIABLE="value"
+```
+
+# Command Substitution
+
+Store the output of a command:
+
+```bash
+current_date=$(date)
+```
+
+Use it:
+
+```bash
+echo "$current_date"
 ```
 
 # Exit Status
+
+Every command returns a number after it finishes.
 
 ```bash
 echo $?
 ```
 
-- `0` = Success
-- Non-zero = Failure
+- `0` means success.
+- Any non-zero number means failure or another condition.
 
-# Conditionals
+Example:
 
 ```bash
-if [[ condition ]]
-then
-    command
-fi
+mkdir Logs
+echo $?
 ```
 
-# Test Operators
+`$?` only contains the exit status of the most recently completed command.
 
-## String
+# Tests
 
-| Operator | Meaning |
-|----------|---------|
-| `==` | Equal |
-| `!=` | Not equal |
-| `-n` | Not empty |
-| `-z` | Empty |
+Tests return success or failure and are commonly used with `if`.
 
-### Numeric
+## String Tests
 
-| Operator | Meaning |
-|----------|---------|
+| Test | Meaning |
+|---|---|
+| `"$a" = "$b"` | Strings are equal |
+| `"$a" != "$b"` | Strings are different |
+| `-z "$a"` | String is empty |
+| `-n "$a"` | String is not empty |
+
+## Number Tests
+
+| Test | Meaning |
+|---|---|
 | `-eq` | Equal |
 | `-ne` | Not equal |
 | `-gt` | Greater than |
@@ -222,62 +287,343 @@ fi
 | `-ge` | Greater than or equal |
 | `-le` | Less than or equal |
 
-### File
+## File Tests
 
-| Operator | Meaning |
-|----------|---------|
-| `-e` | Exists |
-| `-f` | Regular file |
-| `-d` | Directory |
-| `-r` | Readable |
-| `-w` | Writable |
-| `-x` | Executable |
+| Test | Meaning |
+|---|---|
+| `-e path` | Path exists |
+| `-f path` | Regular file exists |
+| `-d path` | Directory exists |
+| `-r path` | Readable |
+| `-w path` | Writable |
+| `-x path` | Executable |
 
-# Logical Operators
-
-| Operator | Meaning |
-|----------|---------|
-| `&&` | AND |
-| `\|\|` | OR |
-| `!` | NOT |
-
-# Wildcards
-
-| Wildcard | Meaning |
-|----------|---------|
-| `*` | Zero or more characters |
-| `?` | Exactly one character |
-| `[abc]` | One matching character |
-
-# Environment Variables
+Examples:
 
 ```bash
-echo $PATH
-
-export VARIABLE=value
+[ -f report.txt ]
 ```
+
+```bash
+[ -d Logs ]
+```
+
+```bash
+[ "$age" -ge 18 ]
+```
+
+# `[ ]` and `[[ ]]`
+
+Both can evaluate conditions.
+
+Traditional test syntax:
+
+```bash
+[ -f file.txt ]
+```
+
+Bash extended test syntax:
+
+```bash
+[[ -f file.txt ]]
+```
+
+Important spacing:
+
+```bash
+[ -f file.txt ]     # Correct
+[-f file.txt]       # Incorrect
+```
+
+`[` and `]` must be separated from the condition by spaces.
+
+For Bash scripts, `[[ ]]` is usually safer and easier for string comparisons and patterns.
+
+# `if`
+
+Run commands only when a condition succeeds:
+
+```bash
+if [[ -f report.txt ]]
+then
+    echo "File exists."
+fi
+```
+
+# `if / else`
+
+Handle both possible outcomes:
+
+```bash
+if [[ -d Logs ]]
+then
+    echo "Directory exists."
+else
+    mkdir Logs
+fi
+```
+
+Only one branch runs.
+
+# `if / elif / else`
+
+Check several conditions in order:
+
+```bash
+if [[ "$score" -ge 90 ]]
+then
+    echo "A"
+elif [[ "$score" -ge 80 ]]
+then
+    echo "B"
+else
+    echo "Below B"
+fi
+```
+
+Bash stops after the first matching condition.
+
+# Commands as Conditions
+
+An `if` statement can test a command directly:
+
+```bash
+if cp report.txt backup/
+then
+    echo "Copy succeeded."
+else
+    echo "Copy failed."
+fi
+```
+
+The `then` block runs when `cp` returns exit status `0`.
+
+# `case`
+
+Use `case` when one value may match several choices:
+
+```bash
+case "$choice" in
+    start)
+        echo "Starting..."
+        ;;
+    stop)
+        echo "Stopping..."
+        ;;
+    restart)
+        echo "Restarting..."
+        ;;
+    *)
+        echo "Invalid option."
+        ;;
+esac
+```
+
+- Each pattern ends with `)`.
+- Each section normally ends with `;;`.
+- `*` catches anything that did not match.
+- `esac` ends the statement.
+
+# `select`
+
+Create a numbered menu:
+
+```bash
+select choice in Backup Restore Quit
+do
+    case "$choice" in
+        Backup)
+            echo "Creating backup..."
+            ;;
+        Restore)
+            echo "Restoring backup..."
+            ;;
+        Quit)
+            break
+            ;;
+        *)
+            echo "Invalid choice."
+            ;;
+    esac
+done
+```
+
+Bash displays:
+
+```text
+1) Backup
+2) Restore
+3) Quit
+#?
+```
+
+The selected word is stored in `$choice`.
+
+# Loops
+
+## `for`
+
+Repeat once for each item:
+
+```bash
+for file in *.txt
+do
+    echo "$file"
+done
+```
+
+## `while`
+
+Repeat while a condition succeeds:
+
+```bash
+count=1
+
+while [[ "$count" -le 5 ]]
+do
+    echo "$count"
+    ((count++))
+done
+```
+
+## Loop Control
+
+```bash
+break
+```
+
+Immediately leave the current loop.
+
+```bash
+continue
+```
+
+Skip the rest of the current repetition and begin the next one.
+
+# Arithmetic
+
+```bash
+count=$((count + 1))
+```
+
+```bash
+((count++))
+```
+
+Arithmetic conditions:
+
+```bash
+if (( count > 10 ))
+then
+    echo "Greater than 10"
+fi
+```
+
+Inside `(( ))`, variables do not require `$`.
+
+# `exit`
+
+End the script immediately:
+
+```bash
+exit 0
+```
+
+- `exit 0` means the script succeeded.
+- A non-zero value normally means an error.
+
+Example:
+
+```bash
+if [[ ! -f config.txt ]]
+then
+    echo "Error: config.txt is missing."
+    exit 1
+fi
+
+echo "Continuing..."
+```
+
+If the file is missing, the script ends before reaching `echo "Continuing..."`.
+
+Custom codes can be documented inside the script:
+
+```bash
+# Exit codes:
+# 0 = Success
+# 1 = Missing configuration
+# 2 = Backup failure
+```
+
+The numbers communicate why the script ended. They do not perform different actions by themselves.
+
+# Script Basics
+
+Start a Bash script with:
+
+```bash
+#!/usr/bin/env bash
+```
+
+Make it executable:
+
+```bash
+chmod +x script.sh
+```
+
+Run it:
+
+```bash
+./script.sh
+```
+
+You can also run it without changing permissions:
+
+```bash
+bash script.sh
+```
+
+# Comments
+
+```bash
+# This is a comment
+```
+
+Comments explain the script and are ignored by Bash.
 
 # Help
 
-| Command | Description |
-|----------|-------------|
-| `man command` | Manual page |
-| `command --help` | Built-in help |
-| `help builtin` | Help for Bash built-ins |
+| Command | What It Does |
+|---|---|
+| `man command` | Open the manual page |
+| `command --help` | Show command help |
+| `help builtin` | Show help for a Bash built-in |
+| `type command` | Show what kind of command it is |
+
+Examples:
+
+```bash
+man grep
+grep --help
+help cd
+type echo
+```
 
 # Keyboard Shortcuts
 
 | Shortcut | Action |
-|----------|--------|
+|---|---|
 | `Tab` | Autocomplete |
-| `↑` | Previous command |
-| `Ctrl + C` | Stop current command |
-| `Ctrl + L` | Clear screen |
+| `Up Arrow` | Previous command |
+| `Ctrl + C` | Stop the current command |
+| `Ctrl + L` | Clear the terminal |
 | `Ctrl + R` | Search command history |
+| `Ctrl + A` | Move to the beginning of the line |
+| `Ctrl + E` | Move to the end of the line |
 
-# Core Commands to Memorize
+# Core Commands to Remember
 
-```
+```text
 pwd
 ls
 cd
@@ -294,8 +640,29 @@ chmod
 chown
 ps
 kill
+systemctl
 ping
 ip
+ss
+curl
 echo
 man
+```
+
+# Core Scripting Syntax to Recognize
+
+```text
+$?
+$variable
+$(command)
+[ condition ]
+[[ condition ]]
+(( arithmetic ))
+if / then / elif / else / fi
+case / esac
+for / while / do / done
+select
+break
+continue
+exit
 ```
