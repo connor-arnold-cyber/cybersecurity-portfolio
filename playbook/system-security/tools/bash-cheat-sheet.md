@@ -4,6 +4,42 @@ A simple reference for common Linux commands and basic Bash scripting.
 
 > This page is for quick reminders, not complete explanations.
 
+# Index
+
+- [Navigation](#navigation)
+- [Files and Directories](#files-and-directories)
+- [Viewing Files](#viewing-files)
+- [Searching](#searching)
+- [Users and Permissions](#users-and-permissions)
+- [Processes and Services](#processes-and-services)
+- [Networking](#networking)
+- [Packages](#packages)
+- [Compression](#compression)
+- [Redirection and Pipes](#redirection-and-pipes)
+- [Command Chaining](#command-chaining)
+- [Wildcards](#wildcards)
+- [Variables](#variables)
+- [Environment Variables](#environment-variables)
+- [Command Substitution](#command-substitution)
+- [Exit Status](#exit-status)
+- [Tests](#tests)
+- [`[ ]` and `[[ ]]`](#--and-)
+- [`if`](#if)
+- [`if / else`](#if--else)
+- [`if / elif / else`](#if--elif--else)
+- [Commands as Conditions](#commands-as-conditions)
+- [`case`](#case)
+- [`select`](#select)
+- [Loops](#loops)
+- [Arithmetic](#arithmetic)
+- [`exit`](#exit)
+- [Script Basics](#script-basics)
+- [Comments](#comments)
+- [Help](#help)
+- [Keyboard Shortcuts](#keyboard-shortcuts)
+- [Core Commands to Remember](#core-commands-to-remember)
+- [Core Scripting Syntax to Recognize](#core-scripting-syntax-to-recognize)
+
 # Navigation
 
 | Command | What It Does |
