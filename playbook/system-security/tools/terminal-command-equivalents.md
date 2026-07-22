@@ -1,151 +1,158 @@
 # Terminal Command Equivalents
 
-A quick-reference guide comparing common tasks across Bash, Windows Command Prompt (CMD), and PowerShell.
+Quick reference for performing common tasks in Bash, Windows Command Prompt (CMD), and PowerShell.
 
-> This page focuses on accomplishing the same task in different shells.
+# Index
+
+- [Navigation](#navigation)
+- [Files & Directories](#files--directories)
+- [Viewing Files](#viewing-files)
+- [Searching](#searching)
+- [Permissions](#permissions)
+- [Processes & Services](#processes--services)
+- [Networking](#networking)
+- [Environment Variables](#environment-variables)
+- [Redirection & Pipes](#redirection--pipes)
+- [Command Chaining](#command-chaining)
+- [Wildcards](#wildcards)
+- [Variables](#variables)
+- [Help](#help)
+- [When to Use Each Shell](#when-to-use-each-shell)
 
 # Navigation
 
 | Task | Bash | CMD | PowerShell |
-|------|------|-----|------------|
-| Print current directory | `pwd` | `cd` | `Get-Location` (`pwd`) |
-| List files | `ls` | `dir` | `Get-ChildItem` (`ls`) |
-| Change directory | `cd folder` | `cd folder` | `Set-Location folder` (`cd`) |
-| Home directory | `cd ~` | `cd %USERPROFILE%` | `cd ~` |
-| Clear screen | `clear` | `cls` | `Clear-Host` (`cls`) |
+|------|------|------|------------|
+| Show current directory | `pwd` | `cd` | `Get-Location` |
+| List files | `ls` | `dir` | `Get-ChildItem` |
+| Detailed listing | `ls -l` | `dir` | `Get-ChildItem` |
+| Show hidden files | `ls -la` | `dir /a` | `Get-ChildItem -Force` |
+| Change directory | `cd folder` | `cd folder` | `Set-Location folder` |
+| Go up one directory | `cd ..` | `cd ..` | `cd ..` |
+| Go home | `cd ~` | `cd %USERPROFILE%` | `cd ~` |
+| Clear screen | `clear` | `cls` | `Clear-Host` |
 
-# File & Directory Management
+# Files & Directories
 
 | Task | Bash | CMD | PowerShell |
-|------|------|-----|------------|
-| Create directory | `mkdir folder` | `mkdir folder` | `mkdir folder` |
-| Remove empty directory | `rmdir folder` | `rmdir folder` | `Remove-Item folder` |
-| Remove directory recursively | `rm -r folder` | `rmdir /s folder` | `Remove-Item folder -Recurse` |
-| Create file | `touch file.txt` | `type nul > file.txt` | `New-Item file.txt -ItemType File` (`ni`) |
-| Copy file | `cp file1 file2` | `copy file1 file2` | `Copy-Item file1 file2` (`cp`) |
-| Move file | `mv file1 file2` | `move file1 file2` | `Move-Item file1 file2` (`mv`) |
-| Rename file | `mv old new` | `rename old new` | `Rename-Item old new` |
-| Delete file | `rm file` | `del file` | `Remove-Item file` (`rm`) |
+|------|------|------|------------|
+| Create file | `touch file.txt` | `type nul > file.txt` | `New-Item file.txt` |
+| Create folder | `mkdir folder` | `mkdir folder` | `mkdir folder` |
+| Copy file | `cp file copy` | `copy file copy` | `Copy-Item file copy` |
+| Copy folder | `cp -r src dst` | `xcopy src dst` | `Copy-Item src dst -Recurse` |
+| Move / Rename | `mv old new` | `move old new` | `Move-Item old new` |
+| Delete file | `rm file` | `del file` | `Remove-Item file` |
+| Delete folder | `rm -r folder` | `rmdir /s folder` | `Remove-Item folder -Recurse` |
 
 # Viewing Files
 
 | Task | Bash | CMD | PowerShell |
-|------|------|-----|------------|
-| Display file | `cat file` | `type file` | `Get-Content file` (`cat`) |
-| View first lines | `head file` | N/A | `Get-Content file -Head 10` |
-| View last lines | `tail file` | N/A | `Get-Content file -Tail 10` |
-| Follow file live | `tail -f file` | N/A | `Get-Content file -Wait` |
+|------|------|------|------------|
+| Display file | `cat file` | `type file` | `Get-Content file` |
+| Page through file | `less file` | `more file` | `Get-Content file \| more` |
+| First lines | `head file` | — | `Get-Content file -Head 10` |
+| Last lines | `tail file` | — | `Get-Content file -Tail 10` |
+| Follow live updates | `tail -f file` | — | `Get-Content file -Wait` |
 
 # Searching
 
 | Task | Bash | CMD | PowerShell |
-|------|------|-----|------------|
+|------|------|------|------------|
 | Search text | `grep "text" file` | `findstr "text" file` | `Select-String "text" file` |
-| Find files | `find . -name file` | `dir /s file` | `Get-ChildItem -Recurse` |
+| Search recursively | `grep -r "text"` | `findstr /s "text"` | `Select-String -Path * -Pattern "text"` |
+| Find file | `find . -name "*.txt"` | `dir /s *.txt` | `Get-ChildItem -Recurse *.txt` |
 | Locate executable | `which program` | `where program` | `Get-Command program` |
 
-# Permissions & Ownership
+# Permissions
 
 | Task | Bash | CMD | PowerShell |
-|------|------|-----|------------|
-| Change permissions | `chmod` | `icacls` | `icacls` |
-| Change owner | `chown` | `takeown` | `Set-Acl` / `takeown` |
-| View permissions | `ls -l` | `icacls file` | `Get-Acl file` |
+|------|------|------|------------|
+| Current user | `whoami` | `whoami` | `whoami` |
+| User information | `id` | `whoami /all` | `whoami /all` |
+| Run as administrator | `sudo command` | `runas` | `Start-Process -Verb RunAs` |
+| Make executable | `chmod +x file` | — | — |
 
-# Processes
-
-| Task | Bash | CMD | PowerShell |
-|------|------|-----|------------|
-| List processes | `ps` | `tasklist` | `Get-Process` (`gps`) |
-| Kill by PID | `kill PID` | `taskkill /PID PID` | `Stop-Process -Id PID` |
-| Kill by name | `pkill process` | `taskkill /IM process.exe` | `Stop-Process -Name process` |
-| Start program | `program` | `start program` | `Start-Process program` |
-
-# Services
+# Processes & Services
 
 | Task | Bash | CMD | PowerShell |
-|------|------|-----|------------|
-| List services | `systemctl list-units --type=service` | `sc query` | `Get-Service` |
-| Start service | `systemctl start service` | `sc start service` | `Start-Service service` |
-| Stop service | `systemctl stop service` | `sc stop service` | `Stop-Service service` |
-| Restart service | `systemctl restart service` | N/A | `Restart-Service service` |
+|------|------|------|------------|
+| List processes | `ps aux` | `tasklist` | `Get-Process` |
+| Live process monitor | `top` | `tasklist` | `Get-Process` |
+| Kill process | `kill PID` | `taskkill /PID PID` | `Stop-Process PID` |
+| Service status | `systemctl status` | `sc query` | `Get-Service` |
+| Start service | `systemctl start` | `net start` | `Start-Service` |
+| Stop service | `systemctl stop` | `net stop` | `Stop-Service` |
+| Restart service | `systemctl restart` | — | `Restart-Service` |
 
 # Networking
 
 | Task | Bash | CMD | PowerShell |
-|------|------|-----|------------|
-| Show IP address | `ip addr` | `ipconfig` | `Get-NetIPAddress` |
-| Ping | `ping host` | `ping host` | `Test-Connection host` |
-| DNS lookup | `dig` / `nslookup` | `nslookup` | `Resolve-DnsName` |
-| View connections | `ss -tuln` | `netstat -ano` | `Get-NetTCPConnection` |
-| Trace route | `traceroute` | `tracert` | `Test-NetConnection -TraceRoute` |
-
-# Users
-
-| Task | Bash | CMD | PowerShell |
-|------|------|-----|------------|
-| Current user | `whoami` | `whoami` | `whoami` |
-| List users | `cat /etc/passwd` | `net user` | `Get-LocalUser` |
-| Create user | `useradd` | `net user /add` | `New-LocalUser` |
-| Change password | `passwd` | `net user username *` | `Set-LocalUser` |
+|------|------|------|------------|
+| Show IP addresses | `ip addr` | `ipconfig` | `Get-NetIPAddress` |
+| Ping host | `ping host` | `ping host` | `Test-Connection host` |
+| Show listening ports | `ss -tuln` | `netstat -ano` | `Get-NetTCPConnection` |
+| DNS lookup | `dig domain` | `nslookup domain` | `Resolve-DnsName domain` |
+| Download file | `wget URL` | `curl URL` | `Invoke-WebRequest URL` |
 
 # Environment Variables
 
 | Task | Bash | CMD | PowerShell |
-|------|------|-----|------------|
-| Display PATH | `echo $PATH` | `echo %PATH%` | `$env:PATH` |
-| Display variable | `echo $VAR` | `echo %VAR%` | `$env:VAR` |
+|------|------|------|------------|
+| Show PATH | `echo $PATH` | `echo %PATH%` | `$env:PATH` |
+| Show variable | `echo $VAR` | `echo %VAR%` | `$env:VAR` |
 | Create variable | `export VAR=value` | `set VAR=value` | `$env:VAR="value"` |
 
-# Redirection & Pipelines
+# Redirection & Pipes
 
 | Task | Bash | CMD | PowerShell |
-|------|------|-----|------------|
+|------|------|------|------------|
 | Overwrite output | `>` | `>` | `>` |
 | Append output | `>>` | `>>` | `>>` |
 | Redirect input | `<` | `<` | `<` |
 | Pipe output | `|` | `|` | `|` *(passes objects instead of text)* |
 
+# Command Chaining
+
+| Task | Bash | CMD | PowerShell |
+|------|------|------|------------|
+| Always run next command | `;` | `&` | `;` |
+| Run if previous succeeds | `&&` | `&&` | `&&` |
+| Run if previous fails | `\|\|` | `\|\|` | `\|\|` |
+
+# Wildcards
+
+| Task | Bash | CMD | PowerShell |
+|------|------|------|------------|
+| Zero or more characters | `*` | `*` | `*` |
+| One character | `?` | `?` | `?` |
+| Character set | `[abc]` | — | `[abc]` |
+| Numeric range | `[0-9]` | — | `[0-9]` |
+
+# Variables
+
+| Task | Bash | CMD | PowerShell |
+|------|------|------|------------|
+| Create variable | `name="Connor"` | `set name=Connor` | `$name="Connor"` |
+| Read variable | `echo $name` | `echo %name%` | `echo $name` |
+
 # Help
 
 | Task | Bash | CMD | PowerShell |
-|------|------|-----|------------|
+|------|------|------|------------|
 | General help | `man command` | `help` | `Get-Help command` |
 | Quick help | `command --help` | `command /?` | `Get-Help command -Examples` |
 | List commands | `compgen -c` | `help` | `Get-Command` |
 
-# Key Differences
+# When to Use Each Shell
 
-## Bash
-
-- Linux and macOS shell
-- Text-based pipeline
-- Strong scripting capabilities
-- Common in servers and cybersecurity
-
-## Windows Command Prompt (CMD)
-
-- Legacy Windows shell
-- Simple command interpreter
-- Best for older scripts and compatibility
-
-## PowerShell
-
-- Modern Windows shell
-- Object-oriented pipeline
-- Built for automation and administration
-- Standard for Windows Server and Active Directory
-
-# Shell Selection Guide
-
-| If you're working with... | Use... |
-|---------------------------|---------|
-| Linux | Bash |
+| Situation | Best Choice |
+|-----------|-------------|
+| Linux systems | Bash |
 | Kali Linux | Bash |
 | Ubuntu | Bash |
 | Red Hat / AlmaLinux | Bash |
-| Windows 10/11 | PowerShell |
+| Windows desktop | PowerShell |
 | Windows Server | PowerShell |
 | Active Directory | PowerShell |
-| Legacy Windows batch scripts | CMD |
+| Legacy batch scripts | CMD |
 | Cross-platform administration | Bash + PowerShell |
