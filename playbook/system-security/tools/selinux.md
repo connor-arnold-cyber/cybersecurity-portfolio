@@ -2,7 +2,9 @@
 
 ## Overview
 
-(Security-Enhanced Linux overview...)
+Security-Enhanced Linux (SELinux) is a Mandatory Access Control (MAC) security framework built into many Linux distributions, including Red Hat Enterprise Linux (RHEL), Fedora, Rocky Linux, AlmaLinux, and CentOS. Unlike traditional Linux permissions, which primarily control access based on file ownership and permission bits, SELinux applies an additional layer of security by enforcing policy-based access controls on users, processes, files, and services.
+
+SELinux follows the principle of least privilege, allowing applications and services to access only the resources explicitly permitted by policy. Even if an attacker compromises a process running as root, SELinux can restrict what that process is allowed to do, helping contain attacks and limit system damage.
 
 ## Why SELinux Exists
 
