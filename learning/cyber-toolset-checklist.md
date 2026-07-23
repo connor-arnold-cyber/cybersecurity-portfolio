@@ -1,116 +1,127 @@
 # Cybersecurity Toolset Checklist
 
-> Goal: Be comfortable enough with each tool to explain **what it does, when to use it, and demonstrate basic usage**.
+> **Goal:** Be comfortable enough with each tool to explain **what it does, when to use it, and demonstrate basic usage**.
 
-## Networking
+## Priority Legend
 
-- [x] ping
-- [y] fping
-- [ ] traceroute / tracert
-- [ ] arp
-- [ ] ip / ipconfig
-- [ ] ss / netstat
-- [ ] netcat (nc)
-- [ ] Nmap
-- [ ] hping3
-- [ ] tcpdump
-- [ ] Wireshark
+- **P1** — Interview Ready (Must Know)
+- **P2** — Should Be Comfortable
+- **P3** — Exposure Is Enough (For Now)
 
-## DNS & Enumeration
+# Networking
 
-- [ ] dig
-- [ ] nslookup
-- [ ] whois
-- [ ] dnsenum
+- [x] ping *(P2)*
+- [ ] fping *(P2)*
+- [ ] traceroute / tracert *(P2)*
+- [ ] arp *(P2)*
+- [ ] ip / ipconfig *(P2)*
+- [ ] ss / netstat *(P2)*
+- [ ] Netcat *(P2)*
+- [ ] Nmap *(P1)*
+- [ ] hping3 *(P3)*
+- [ ] tcpdump *(P1)*
+- [ ] Wireshark *(P1)*
 
-## Web Enumeration & Testing
+# DNS & Enumeration
 
-- [ ] Gobuster
-- [ ] FFUF
-- [ ] Dirsearch
-- [ ] curl
-- [ ] Burp Suite Community
+- [ ] dig *(P2)*
+- [ ] nslookup *(P2)*
+- [ ] whois *(P2)*
+- [ ] dnsenum *(P3)*
 
-## Password & Hash Analysis
+# Web Enumeration & Testing
 
-- [ ] Hashcat
-- [ ] John the Ripper
+- [ ] Gobuster *(P3)*
+- [ ] FFUF *(P3)*
+- [ ] Dirsearch *(P3)*
+- [ ] curl *(P2)*
+- [ ] Burp Suite Community *(P3)*
 
-## Vulnerability Assessment
+# Password & Hash Analysis
 
-- [ ] Nessus Essentials
-- [ ] OpenVAS
+- [ ] Hashcat *(P3)*
+- [ ] John the Ripper *(P3)*
 
-## SIEM & Log Analysis
+# Vulnerability Assessment
 
-- [ ] Splunk
-- [ ] Wazuh
+- [ ] Nessus Essentials *(P2)*
+- [ ] OpenVAS *(P3)*
 
-## IDS / IPS
+# SIEM & Log Analysis
 
-- [ ] Suricata
-- [ ] Security Onion
+- [ ] Splunk *(P1)*
+- [ ] Wazuh *(P1)*
 
-## Windows
+# IDS / IPS
 
-- [ ] Event Viewer
-- [ ] PowerShell
-- [ ] Sysinternals Suite
-- [ ] Windows Defender
-- [ ] Task Scheduler
+- [ ] Suricata *(P3)*
+- [ ] Security Onion *(P3)*
 
-## Linux
+# Windows
 
-- [ ] Bash
-- [ ] systemctl
-- [ ] journalctl
-- [ ] iptables / nftables
-- [ ] grep
-- [ ] find
-- [ ] chmod
-- [ ] chown
+- [ ] Event Viewer *(P1)*
+- [ ] PowerShell *(P1)*
+- [ ] Sysinternals Suite *(P2)*
+- [ ] Windows Defender *(P2)*
+- [ ] Task Scheduler *(P2)*
 
-## Active Directory
+# Linux
 
-- [ ] Active Directory Users & Computers (ADUC)
-- [ ] Group Policy (GPO)
-- [ ] DNS
-- [ ] DHCP
+- [ ] Bash *(P1)*
+- [ ] systemctl *(P2)*
+- [ ] journalctl *(P2)*
+- [ ] iptables / nftables *(P3)*
+- [ ] grep *(P2)*
+- [ ] find *(P2)*
+- [ ] chmod *(P2)*
+- [ ] chown *(P2)*
 
-## Scripting & Automation
+# Active Directory
 
-- [ ] Python
-- [ ] Bash scripting
-- [ ] PowerShell scripting
+- [ ] Active Directory Users & Computers (ADUC) *(P1)*
+- [ ] Group Policy (GPO) *(P1)*
+- [ ] DNS *(P1)*
+- [ ] DHCP *(P1)*
 
-## Version Control
+# Scripting & Automation
 
-- [ ] Git
-- [ ] GitHub
+- [ ] Python *(P2)*
+- [ ] Bash Scripting *(P1)*
+- [ ] PowerShell Scripting *(P1)*
 
-## Virtualization
+# Version Control
 
-- [ ] VMware Workstation
-- [ ] VirtualBox
-- [ ] Proxmox
+- [ ] Git *(P1)*
+- [ ] GitHub *(P1)*
+
+# Virtualization
+
+- [ ] VMware Workstation *(P2)*
+- [ ] VirtualBox *(P2)*
+- [ ] Proxmox *(P2)*
 
 # Mastery Levels
 
 ## Level 1 — Recognition
+
 - [ ] I know what the tool does.
 
 ## Level 2 — Basic Usage
-- [ ] I can use the common commands without looking them up.
+
+- [ ] I can perform common tasks without looking up the commands.
 
 ## Level 3 — Troubleshooting
+
 - [ ] I can solve basic problems using the tool.
 
 ## Level 4 — Interview Ready
+
 - [ ] I can explain:
-  - What the tool does
-  - When to use it
-  - Why to use it instead of another tool
-  - Show a basic example from memory
+  - What the tool does.
+  - When to use it.
+  - Why I would choose it over similar tools.
+  - A basic example from memory.
 
 ## Level 5 — Portfolio Ready
+
 - [ ] I have at least one GitHub project demonstrating the tool.
