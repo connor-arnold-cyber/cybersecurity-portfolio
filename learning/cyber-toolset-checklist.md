@@ -4,8 +4,8 @@
 
 ## Networking
 
-- [ ] ping
-- [ ] fping
+- [x] ping
+- [y] fping
 - [ ] traceroute / tracert
 - [ ] arp
 - [ ] ip / ipconfig
