@@ -2,39 +2,79 @@
 
 ## Overview
 
-Public Key Infrastructure (PKI) is a framework of technologies, policies, and procedures used to create, manage, distribute, validate, and revoke digital certificates and public keys.
+Public Key Infrastructure (PKI) is the framework of technologies, policies, hardware, software, and trusted organizations that manages digital certificates and public key encryption.
 
-PKI establishes trust between users, devices, and organizations communicating over a network.
+PKI establishes trust between systems by issuing, validating, renewing, and revoking digital certificates used for secure communications.
 
 ## Key Concepts
 
-- Public Key
-- Private Key
-- Digital Certificates
-- Certificate Authority (CA)
-- Certificate Revocation
+### Public and Private Keys
+
+PKI uses asymmetric encryption, where each entity has two mathematically related keys:
+
+- **Public key** – Shared with others and used to encrypt data or verify digital signatures.
+- **Private key** – Kept secret and used to decrypt data or create digital signatures.
+
+Only the matching private key can decrypt data encrypted with the corresponding public key.
+
+### Certificate Authority (CA)
+
+A Certificate Authority (CA) is a trusted organization responsible for issuing and digitally signing certificates.
+
+Clients trust certificates because they trust the CA that issued them.
+
+Examples include commercial CAs as well as internal enterprise CAs.
+
+### Registration Authority (RA)
+
+A Registration Authority (RA) verifies the identity of entities requesting certificates.
+
+Once identity is confirmed, the RA authorizes the CA to issue the certificate.
+
+Not every PKI deployment includes a separate RA.
+
+### Digital Certificates
+
+PKI manages the complete lifecycle of digital certificates, including:
+
+- Issuance
+- Renewal
+- Validation
+- Revocation
+- Expiration
+
+Certificates bind an identity to a public key.
+
+### Certificate Revocation
+
+If a certificate is compromised or should no longer be trusted, it can be revoked before its expiration date.
+
+Clients may check certificate status using mechanisms such as:
+
+- Certificate Revocation Lists (CRLs)
+- Online Certificate Status Protocol (OCSP)
 
 ## Why It Matters
 
-Without PKI, there would be no reliable way to verify that a public key actually belongs to the person or organization claiming to own it. PKI provides the trust needed for secure communication over the Internet.
+PKI provides the trust required for secure communications across the Internet and private networks. It enables systems to authenticate one another, exchange encrypted information, and verify digital signatures without sharing private keys.
+
+Without PKI, technologies such as HTTPS, VPNs, secure email, and code signing would not function securely.
 
 ## Common Uses
 
-- HTTPS
-- TLS
-- VPNs
-- Secure Email
-- Code Signing
-- Smart Cards
+- HTTPS websites
+- TLS authentication
+- VPN authentication
+- Secure email
+- Digital signatures
+- Code signing
+- Device authentication
+- Enterprise certificate management
 
 ## Best Practices
 
-- Protect private keys.
+- Protect private keys with strong access controls.
 - Use trusted Certificate Authorities.
-- Revoke compromised certificates immediately.
 - Monitor certificate expiration dates.
-- Follow established security policies for certificate management.
-
-## Related Labs & Projects
-
-- Coming soon.
+- Revoke compromised certificates immediately.
+- Regularly audit PKI infrastructure and certificate inventories.
