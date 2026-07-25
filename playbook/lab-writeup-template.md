@@ -4,12 +4,6 @@
 
 <One concise paragraph explaining what the lab demonstrates and why it matters.>
 
-## Objective
-
-- ...
-- ...
-- ...
-
 ## Lab Summary
 
 This lab follows the lifecycle of <technology/process>:
