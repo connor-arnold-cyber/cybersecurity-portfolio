@@ -103,9 +103,9 @@ reg export "HKLM\System\CurrentControlSet\Services\CertSvc\Configuration" C:\Bac
 
 ## Related Playbook Pages
 
-- [Active Directory Certificate Services (AD CS)](../concepts/active-directory-certificate-services.md)
-- [Certificate Authority (CA)](../../connection-security/concepts/certificate-authority.md)
-- [Certificate Revocation Lists (CRLs)](../../connection-security/concepts/certificate-revocation-lists-crls.md)
+- [Active Directory Certificate Services (AD CS)](../concepts/active-directory-certificate-services.md) (coming soon)
+- [Certificate Authority (CA)](../../connection-security/concepts/certificate-authority.md) 
+- [Certificate Revocation Lists (CRLs)](../../connection-security/concepts/certificate-revocation-lists-crls.md) 
 - [Online Certificate Status Protocol (OCSP)](../../connection-security/concepts/online-certificate-status-protocol-ocsp.md)
 - [Digital Certificates](../../connection-security/concepts/digital-certificates.md)
 - [Public Key Infrastructure (PKI)](../../connection-security/concepts/pki-public-key-infrastructure.md)
