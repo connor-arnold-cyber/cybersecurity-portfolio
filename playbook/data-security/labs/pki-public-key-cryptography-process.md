@@ -139,6 +139,95 @@ Digital Certificate
 Trusted by systems that trust the CA
 ```
 
+# Commands Used
+
+## Create the Lab Directory
+
+```bash
+mkdir Module_1 && cd Module_1
+mkdir Digital_Signature && cd Digital_Signature
+mkdir Alice Bob
+cd Alice
+```
+
+## Generate an RSA Key Pair
+
+```bash
+openssl genpkey -algorithm RSA -out alice_privatekey.pem
+openssl rsa -in alice_privatekey.pem -out alice_publickey.pem -pubout -outform PEM
+```
+
+## Create a Digital Signature
+
+```bash
+echo "This is Alice's digest." > alice_digest.txt
+openssl dgst -sha256 -sign alice_privatekey.pem -out alice_signature.bin alice_digest.txt
+```
+
+## Verify a Digital Signature
+
+```bash
+cp alice_publickey.pem alice_signature.bin alice_digest.txt /home/aciadmin/Module_1/Digital_Signature/Bob
+cd /home/aciadmin/Module_1/Digital_Signature/Bob
+openssl dgst -sha256 -verify alice_publickey.pem -signature alice_signature.bin alice_digest.txt
+```
+
+## Demonstrate Signature Verification Failure
+
+```bash
+echo "This is a change to the digest." > alice_digest.txt
+openssl dgst -sha256 -verify alice_publickey.pem -signature alice_signature.bin alice_digest.txt
+```
+
+## Create a Certificate Signing Request (CSR)
+
+```bash
+cd ~/Module_1
+mkdir CSR && cd CSR
+mkdir SecPlusLLC && cd SecPlusLLC
+
+openssl req -newkey rsa:2048 -keyout SecPlusLLC_privatekey.pem -out SecPlusLLC.csr
+
+cat SecPlusLLC.csr
+```
+
+## Send the CSR to the Certificate Authority
+
+```bash
+mkdir /home/aciadmin/Module_1/CSR/CA
+cp SecPlusLLC.csr /home/aciadmin/Module_1/CSR/CA
+```
+
+## Create the Certificate Authority
+
+```bash
+cd ../CA
+
+openssl genpkey -algorithm RSA -out CA_privatekey.pem
+
+openssl req -x509 -new -key CA_privatekey.pem -days 1999 -out CA.crt
+```
+
+## Sign the CSR
+
+```bash
+openssl x509 -req -in SecPlusLLC.csr -CA CA.crt -CAkey CA_privatekey.pem -CAcreateserial -out SecPlusLLC.crt -days 365 -sha256
+```
+
+## View the Certificates
+
+```bash
+cat CA.crt
+cat SecPlusLLC.crt
+```
+
+## Return the Signed Certificate
+
+```bash
+cp SecPlusLLC.crt /home/aciadmin/Module_1/CSR/SecPlusLLC
+ls -la /home/aciadmin/Module_1/CSR/SecPlusLLC
+```
+
 ## Quick Reference
 
 | Item | Purpose |
