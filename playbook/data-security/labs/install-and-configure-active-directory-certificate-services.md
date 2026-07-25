@@ -105,8 +105,8 @@ reg export "HKLM\System\CurrentControlSet\Services\CertSvc\Configuration" C:\Bac
 
 - [Active Directory Certificate Services (AD CS)](../concepts/active-directory-certificate-services.md) (coming soon)
 - [Certificate Authority (CA)](../../connection-security/concepts/certificate-authority.md) 
-- [Certificate Revocation Lists (CRLs)](../../connection-security/concepts/certificate-revocation-lists-crls.md) 
-- [Online Certificate Status Protocol (OCSP)](../../connection-security/concepts/online-certificate-status-protocol-ocsp.md)
+- [Certificate Revocation Lists (CRLs)](../../connection-security/concepts/certificate-revocation-lists-crls.md) (coming soon)
+- [Online Certificate Status Protocol (OCSP)](../../connection-security/concepts/online-certificate-status-protocol-ocsp.md) (coming soon)
 - [Digital Certificates](../../connection-security/concepts/digital-certificates.md)
 - [Public Key Infrastructure (PKI)](../../connection-security/concepts/pki-public-key-infrastructure.md)
-- [Certutil](../concepts/certutil.md)
+- [Certutil](../tools/certutil.md) (coming soon)
