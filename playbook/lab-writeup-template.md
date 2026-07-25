@@ -8,7 +8,7 @@
 
 ## Key Takeaways
 
--...
+- ...
 
 ## Workflow
 
