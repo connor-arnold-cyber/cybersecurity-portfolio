@@ -1,258 +1,225 @@
-# Lab: Cryptographic Solutions
+# Lab: Install and Configure Active Directory Certificate Services
 
 ## Overview
 
-This lab demonstrates how public key cryptography is used to protect the authenticity, integrity, and trustworthiness of digital information. Using OpenSSL, RSA key pairs are generated, digital signatures are created and verified, and a Certificate Signing Request (CSR) is signed by a Certificate Authority (CA) to produce a trusted digital certificate.
+This lab demonstrates how to deploy and manage an Enterprise Root Certification Authority using Active Directory Certificate Services (AD CS). It covers installing and configuring the Certification Authority, issuing and revoking user certificates, and backing up the Certification Authority to support certificate lifecycle management and disaster recovery within a Windows domain.
 
 ## Lab Summary
 
-This lab follows the lifecycle of asymmetric cryptography:
+This lab follows the lifecycle of deploying and maintaining an Enterprise Root Certification Authority:
 
-1. Generate an RSA public/private key pair.
-2. Use the private key to digitally sign a file.
-3. Verify the signature using the corresponding public key.
-4. Create a Certificate Signing Request (CSR).
-5. Have a Certificate Authority sign the CSR.
-6. Receive a trusted digital certificate.
+1. Install Active Directory Certificate Services.
+2. Configure an Enterprise Root Certification Authority.
+3. Verify the Certification Authority installation.
+4. Request and issue a user certificate.
+5. Revoke the issued certificate.
+6. Verify certificate revocation.
+7. Back up the Certification Authority.
+8. Export the Certification Authority configuration.
 
 ## Key Takeaways
 
-- RSA key pairs enable secure public key cryptography.
-- Digital signatures provide authenticity and integrity.
-- SHA-256 detects file modifications.
-- A CSR requests a trusted certificate without exposing the private key.
-- Certificate Authorities establish trust by signing certificates.
-- PKI combines these components into a trusted cryptographic ecosystem.
+- Active Directory Certificate Services provides Microsoft's Public Key Infrastructure (PKI) for Windows environments.
+- Enterprise Root Certification Authorities integrate directly with Active Directory to issue trusted certificates.
+- Certificate revocation prevents compromised or invalid certificates from being trusted before they expire.
+- Certificate Revocation Lists (CRLs) distribute revocation information throughout the PKI.
+- Certification Authority backups protect the private key, certificate database, and configuration for disaster recovery.
+- Certutil provides command-line administration and backup capabilities for AD CS.
+- Proper CA backups are critical to restoring trust after hardware or system failures.
 
 ## Workflow
 
-### Generate an RSA Key Pair
+### Install Active Directory Certificate Services
 
-Created an RSA private key and derived the matching public key.
-
-**Purpose**
-
-- Establish an asymmetric key pair.
-- Keep the private key secret.
-- Share the public key for verification and encryption.
-
-### Create a Digital Signature
-
-Generated a SHA-256 hash of a file and encrypted the hash with the private key to create a digital signature.
+Installed the Active Directory Certificate Services server role using Server Manager. Added the Certification Authority and Online Responder role services along with the required IIS components.
 
 **Purpose**
 
-- Prove the sender's identity.
-- Protect the integrity of the file.
-- Detect any modifications.
+- Deploy Microsoft's Public Key Infrastructure service.
+- Enable certificate issuance and management.
+- Prepare the server to function as a Certification Authority.
 
-### Verify the Digital Signature
+### Configure the Enterprise Root Certification Authority
 
-Verified the signature using the public key.
+Configured the server as an Enterprise Root Certification Authority using the default cryptographic provider, key length, hashing algorithm, CA name, database location, and five-year validity period.
+
+**Purpose**
+
+- Establish the root of trust for the domain.
+- Create the Certification Authority's cryptographic identity.
+- Configure the Certification Authority database and private key.
 
 **Result**
 
-- Original file → Verification succeeded.
-- Modified file → Verification failed.
+- The Enterprise Root Certification Authority was successfully configured and operational.
 
-This demonstrates that any change to the file changes its hash, causing signature verification to fail.
+### Verify the Certification Authority
 
-### Create a Certificate Signing Request (CSR)
-
-Generated a CSR containing:
-
-- Public key
-- Organization information
-- Common Name (CN)
-
-The CSR was submitted to a Certificate Authority.
+Opened the Certification Authority management console to verify that the Certification Authority was functioning correctly.
 
 **Purpose**
 
-Request a trusted certificate without exposing the private key.
+- Confirm that Certificate Services installed successfully.
+- Verify that the Certification Authority was ready to issue certificates.
 
-### Sign the CSR with a Certificate Authority
+**Result**
 
-The CA verified the request and signed it using its own private key, producing a digital certificate.
+- The Certification Authority console displayed a healthy Enterprise Root Certification Authority.
+
+### Request a User Certificate
+
+Requested a User certificate through the Certificates MMC snap-in while logged in as a domain user.
 
 **Purpose**
 
-Establish trust between the public key and the identity contained in the certificate.
+- Demonstrate certificate enrollment.
+- Verify that the Certification Authority could issue certificates to Active Directory users.
 
-### Verify the Certificate
+**Result**
 
-Confirmed that the issued certificate could be validated against the CA's certificate.
+- A User certificate was successfully issued.
 
-This demonstrates the trust model used by HTTPS, VPNs, code signing, email security, and many enterprise authentication systems.
+### Revoke the User Certificate
+
+Located the issued certificate in the Certification Authority console and revoked it using the **Key Compromise** revocation reason.
+
+**Purpose**
+
+- Demonstrate certificate lifecycle management.
+- Prevent a compromised certificate from being trusted.
+
+**Result**
+
+- The certificate appeared in the **Revoked Certificates** container.
+
+This demonstrates how revoked certificates are tracked and prevented from being trusted before they expire.
+
+### Back Up the Certification Authority
+
+Created a full backup of the Certification Authority using the Certification Authority Backup Wizard.
+
+The backup included:
+
+- Private key
+- CA certificate
+- Certificate database
+- Certificate database log
+
+**Purpose**
+
+- Protect the Certification Authority against data loss.
+- Preserve the components required for disaster recovery.
+
+**Result**
+
+- A complete Certification Authority backup was successfully created.
+
+### Back Up the Certification Authority Using Certutil
+
+Performed a command-line backup of the Certification Authority using Certutil.
+
+**Purpose**
+
+- Demonstrate command-line administration of AD CS.
+- Create a backup using Microsoft's PKI management utility.
+
+**Result**
+
+- The Certification Authority database was successfully backed up.
+
+### Export the Certification Authority Configuration
+
+Exported the Certification Authority registry configuration to a `.reg` file.
+
+**Purpose**
+
+- Preserve the Certification Authority configuration.
+- Support complete restoration of the Certification Authority.
+
+**Result**
+
+- The Certification Authority configuration was successfully exported.
 
 ## Notes
 
-### Digital Signature Process
+### Enterprise Root Certification Authority
+
+An Enterprise Root Certification Authority integrates directly with Active Directory. It automatically publishes certificates and Certificate Revocation Lists (CRLs), allowing domain users and computers to trust certificates issued by the Certification Authority.
+
+### Certification Authority Lifecycle
 
 ```text
-File
- │
- ▼
-SHA-256 Hash
- │
- ▼
-Encrypted with Private Key
- │
- ▼
-Digital Signature
-
-Receiver
-
-File ──► SHA-256 Hash
-            │
-            ▼
-Decrypt Signature with Public Key
-            │
-            ▼
-Hashes Match?
+Install AD CS
       │
-      ├── Yes → Authentic & Unmodified
-      └── No  → Modified or Invalid
+      ▼
+Configure Enterprise Root CA
+      │
+      ▼
+Issue User Certificate
+      │
+      ▼
+Certificate Used
+      │
+      ▼
+Certificate Revoked
+      │
+      ▼
+CRL Updated
+      │
+      ▼
+Back Up CA
+      │
+      ▼
+Export CA Configuration
 ```
 
-### Certificate Issuance Process
+### Certification Authority Backup
 
-```text
-Client
- │
- │ Generates RSA Key Pair
- ▼
-Private Key      Public Key
-      │
-      ▼
-Generate CSR
-      │
-      ▼
-Certificate Authority
-      │
-Signs CSR with CA Private Key
-      │
-      ▼
-Digital Certificate
-      │
-      ▼
-Trusted by systems that trust the CA
-```
+A complete Certification Authority backup includes:
+
+- Private key
+- CA certificate
+- Certificate database
+- Database logs
+- Registry configuration
+
+Together, these components allow the Certification Authority to be fully restored after hardware failure, corruption, or accidental data loss.
 
 ## Commands Used
 
-### Create the Lab Directory
+### Back Up the Certification Authority
 
-```bash
-mkdir Module_1 && cd Module_1
-mkdir Digital_Signature && cd Digital_Signature
-mkdir Alice Bob
-cd Alice
+```cmd
+certutil -backup C:\BackupCA2
 ```
 
-### Generate an RSA Key Pair
+### Export the Certification Authority Configuration
 
-```bash
-openssl genpkey -algorithm RSA -out alice_privatekey.pem
-openssl rsa -in alice_privatekey.pem -out alice_publickey.pem -pubout -outform PEM
-```
-
-### Create a Digital Signature
-
-```bash
-echo "This is Alice's digest." > alice_digest.txt
-openssl dgst -sha256 -sign alice_privatekey.pem -out alice_signature.bin alice_digest.txt
-```
-
-### Verify a Digital Signature
-
-```bash
-cp alice_publickey.pem alice_signature.bin alice_digest.txt /home/aciadmin/Module_1/Digital_Signature/Bob
-cd /home/aciadmin/Module_1/Digital_Signature/Bob
-openssl dgst -sha256 -verify alice_publickey.pem -signature alice_signature.bin alice_digest.txt
-```
-
-### Demonstrate Signature Verification Failure
-
-```bash
-echo "This is a change to the digest." > alice_digest.txt
-openssl dgst -sha256 -verify alice_publickey.pem -signature alice_signature.bin alice_digest.txt
-```
-
-### Create a Certificate Signing Request (CSR)
-
-```bash
-cd ~/Module_1
-mkdir CSR && cd CSR
-mkdir SecPlusLLC && cd SecPlusLLC
-
-openssl req -newkey rsa:2048 -keyout SecPlusLLC_privatekey.pem -out SecPlusLLC.csr
-
-cat SecPlusLLC.csr
-```
-
-### Send the CSR to the Certificate Authority
-
-```bash
-mkdir /home/aciadmin/Module_1/CSR/CA
-cp SecPlusLLC.csr /home/aciadmin/Module_1/CSR/CA
-```
-
-### Create the Certificate Authority
-
-```bash
-cd ../CA
-
-openssl genpkey -algorithm RSA -out CA_privatekey.pem
-
-openssl req -x509 -new -key CA_privatekey.pem -days 1999 -out CA.crt
-```
-
-### Sign the CSR
-
-```bash
-openssl x509 -req -in SecPlusLLC.csr -CA CA.crt -CAkey CA_privatekey.pem -CAcreateserial -out SecPlusLLC.crt -days 365 -sha256
-```
-
-### View the Certificates
-
-```bash
-cat CA.crt
-cat SecPlusLLC.crt
-```
-
-### Return the Signed Certificate
-
-```bash
-cp SecPlusLLC.crt /home/aciadmin/Module_1/CSR/SecPlusLLC
-ls -la /home/aciadmin/Module_1/CSR/SecPlusLLC
+```cmd
+reg export "HKLM\System\CurrentControlSet\Services\CertSvc\Configuration" C:\BackupCA1\CAConfig.reg
 ```
 
 ## Quick Reference
 
 | Item | Purpose |
 |------|---------|
-| OpenSSL | Cryptographic toolkit used throughout the lab |
-| RSA | Generates the public/private key pair |
-| Private Key | Creates digital signatures and must remain secret |
-| Public Key | Verifies signatures and is shared with others |
-| Command: dgst | Creates or verifies a cryptographic hash |
-| SHA-256 | Hashing algorithm used to verify integrity |
-| Digital Signature | Proves authenticity and integrity |
-| CSR | Requests a signed certificate from a CA |
-| CA | Verifies identity and signs certificates |
-| Digital Certificate | Binds an identity to a public key |
-| Signature Verification Failure | Indicates the file or signature has been altered |
+| Active Directory Certificate Services (AD CS) | Provides Microsoft's Public Key Infrastructure |
+| Enterprise Root Certification Authority | Trusted root Certification Authority integrated with Active Directory |
+| Certification Authority (CA) | Issues, manages, and revokes digital certificates |
+| Online Responder | Provides certificate status information using OCSP |
+| User Certificate | Authenticates users and computers within the domain |
+| Certificate Revocation | Invalidates certificates before expiration |
+| Certificate Revocation List (CRL) | Publishes revoked certificates to clients |
+| Certutil | Command-line utility for administering and backing up AD CS |
+| Certification Authority Backup | Protects the CA database, certificate, and private key |
+| Registry Export | Preserves the Certification Authority configuration for recovery |
 
 ## Related Playbook Pages
 
-- [RSA](../concepts/rsa.md)
-- [Asymmetric Encryption](../concepts/asymmetric-encryption.md)
-- [Public & Private Key Encryption](../../connection-security/concepts/public-&-private-key-encryption.md)
-- [Hashing](../concepts/hashing.md)
-- [SHA-256](../concepts/sha-256.md)
-- [Digital Signatures](../concepts/digital-signatures.md)
-- [Certificate Signing Requests (CSRs)](../../connection-security/concepts/csr-certificate-signing-requests.md)
+- [Active Directory Certificate Services (AD CS)](../concepts/active-directory-certificate-services.md) (coming soon)
 - [Certificate Authority (CA)](../../connection-security/concepts/certificate-authority.md)
+- [Certificate Revocation Lists (CRLs)](../../connection-security/concepts/certificate-revocation-lists-crls.md) (coming soon)
+- [Online Certificate Status Protocol (OCSP)](../../connection-security/concepts/online-certificate-status-protocol-ocsp.md) (coming soon)
 - [Digital Certificates](../../connection-security/concepts/digital-certificates.md)
 - [Public Key Infrastructure (PKI)](../../connection-security/concepts/pki-public-key-infrastructure.md)
+- [Certutil](../tools/certutil.md) (coming soon)
