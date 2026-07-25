@@ -147,6 +147,7 @@ Trusted by systems that trust the CA
 | RSA | Generates the public/private key pair |
 | Private Key | Creates digital signatures and must remain secret |
 | Public Key | Verifies signatures and is shared with others |
+| dgst | Command that creates or verifies a cryptographic hash |
 | SHA-256 | Hashing algorithm used to verify integrity |
 | Digital Signature | Proves authenticity and integrity |
 | CSR | Requests a signed certificate from a CA |
