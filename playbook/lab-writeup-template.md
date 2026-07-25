@@ -36,6 +36,10 @@ This lab follows the lifecycle of <technology/process>:
 
 - ...
 
+### <Task Name>
+
+<repeat the pattern>
+
 ## Notes
 
 ### <Concept or Process>
