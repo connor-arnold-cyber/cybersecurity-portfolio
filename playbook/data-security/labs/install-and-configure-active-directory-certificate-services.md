@@ -4,15 +4,18 @@
 
 This lab demonstrates how to install and configure Active Directory Certificate Services (AD CS) as an Enterprise Root Certification Authority in a Windows domain environment. It also covers requesting and revoking user certificates, publishing certificate revocation information, and backing up the Certification Authority for disaster recovery.
 
-### Objective
+## Lab Summary
 
-- Install and configure Active Directory Certificate Services.
-- Configure an Enterprise Root Certification Authority.
-- Request and issue a user certificate.
-- Revoke an issued certificate.
-- Verify certificate revocation.
-- Perform Certificate Authority backups using both the graphical interface and Certutil.
-- Export the Certificate Authority configuration for recovery.
+This lab walks through the lifecycle of deploying and maintaining an Enterprise Root Certificate Authority:
+
+1. Install Active Directory Certificate Services.
+2. Configure an Enterprise Root Certification Authority.
+3. Verify the Certification Authority.
+4. Request a user certificate.
+5. Revoke the issued certificate.
+6. Verify certificate revocation.
+7. Back up the Certificate Authority.
+8. Export the CA configuration for disaster recovery.
 
 ## Key Takeaways
 
