@@ -15,6 +15,15 @@ This lab follows the lifecycle of asymmetric cryptography:
 5. Have a Certificate Authority sign the CSR.
 6. Receive a trusted digital certificate.
 
+## Key Takeaways
+
+- RSA key pairs enable secure public key cryptography.
+- Digital signatures provide authenticity and integrity.
+- SHA-256 detects file modifications.
+- A CSR requests a trusted certificate without exposing the private key.
+- Certificate Authorities establish trust by signing certificates.
+- PKI combines these components into a trusted cryptographic ecosystem.
+
 ## Workflow
 
 ### Generate an RSA Key Pair
