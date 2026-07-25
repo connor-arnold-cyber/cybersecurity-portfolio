@@ -20,6 +20,12 @@
 
 - ...
 
+## Commands Used
+
+### <Task Title>
+
+...
+
 ## Related Playbook Pages
 
 - [[...]]
