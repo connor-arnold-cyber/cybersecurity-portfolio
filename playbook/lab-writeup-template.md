@@ -6,6 +6,10 @@
 
 ...
 
+## Key Takeaways
+
+-...
+
 ## Workflow
 
 ### <Section Title>
