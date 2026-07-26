@@ -157,8 +157,8 @@ capinfos HTTP2capture.cap
 
 ## Related Playbook Pages
 
-- [Denial of Service (DoS)](../concepts/denial-of-service-dos.md)
-- [Distributed Denial of Service (DDoS)](../concepts/distributed-denial-of-service-ddos.md)
-- [tcpdump](../tools/tcpdump.md)
+- [Denial of Service (DoS)](../concepts/denial-of-service-dos.md) (coming soon)
+- [Distributed Denial of Service (DDoS)](../concepts/distributed-denial-of-service-ddos.md) (coming soon)
+- [tcpdump](../tools/tcpdump.md) (coming soon)
 - [Wireshark](../tools/wireshark.md)
 - [Ping](../tools/ping.md)
