@@ -1,4 +1,4 @@
-# Lab: Performing a Denial-of-Service Attack From the WAN
+# Lab: DOS Traffic Analysis With LOIC And TCPdump
 
 ## Overview
 
