@@ -81,5 +81,5 @@ ASCII diagram (if applicable)
 ## Related Playbook Pages
 
 - [Page](path.md)
-- [Page](path.md) (coming soon)
+- [Page](path.md) (coming soon) <if playbook page has not been created yet>
 - [Page](path.md)
