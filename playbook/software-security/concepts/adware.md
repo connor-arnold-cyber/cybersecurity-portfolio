@@ -29,8 +29,3 @@ While often less destructive than other malware, adware can reduce system perfor
 - Review installation options carefully.
 - Use reputable anti-malware software.
 - Remove unnecessary browser extensions.
-
-## Related Labs & Projects
-
-- Malware Removal
-- Browser Security
