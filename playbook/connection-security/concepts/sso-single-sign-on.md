@@ -44,7 +44,6 @@ Because the token represents a successful login, the user does not need to enter
 SSO commonly uses protocols such as:
 
 - SAML
-- OAuth 2.0
 - OpenID Connect (OIDC)
 
 These protocols allow applications from different vendors to trust the same Identity Provider.
