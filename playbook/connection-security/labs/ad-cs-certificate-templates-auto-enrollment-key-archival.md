@@ -1,5 +1,7 @@
 # Lab: AD CS Certificate Templates, Auto-Enrollment, and Key Archival
 
+SHA-1 was required by the lab but is deprecated for production use.
+
 ## Overview
 
 This lab demonstrated how Active Directory Certificate Services (AD CS) manages the lifecycle of enterprise certificates through certificate authority installation, customized certificate templates, Group Policy auto-enrollment, user certificate issuance, and key archival planning. These capabilities allow an organization to standardize certificate settings, distribute certificates to domain users, support authentication and encryption, and recover archived private keys when certificates are lost.
@@ -235,21 +237,20 @@ Key archival and certificate backup are not identical. Key archival allows the C
 
 ### Install and Configure Active Directory Certificate Services
 
-```bash
+```powershell
 Add-WindowsFeature ADCS-Cert-Authority -IncludeManagementTools
 Install-AdcsCertificationAuthority -CAType EnterpriseRootCA -CryptoProviderName "RSA#Microsoft Software Key Storage Provider" -KeyLength 2048 -HashAlgorithmName SHA1 -ValidityPeriod Years -ValidityPeriodUnits 5
-exit
 ```
 
 ### Refresh Group Policy
 
-```bash
+```cmd
 gpupdate /force
 ```
 
 ### Identify Screenshot Evidence
 
-```bash
+```cmd
 echo Connor Arnold - July 29, 2026
 ```
 
