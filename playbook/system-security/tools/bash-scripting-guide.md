@@ -18,7 +18,7 @@ Learn the fundamentals of writing Bash scripts.
 - [Functions](#functions)
 - [Useful Commands](#useful-commands)
 
-# What Is a Bash Script?
+## What Is a Bash Script?
 
 A Bash script is simply a text file containing Bash commands that execute from top to bottom.
 
