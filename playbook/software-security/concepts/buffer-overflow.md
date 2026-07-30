@@ -29,9 +29,3 @@ Buffer overflows have been responsible for countless critical vulnerabilities in
 - Keep software patched.
 - Use modern memory protections (ASLR, DEP).
 - Follow secure coding practices.
-
-## Related Labs & Projects
-
-- Vulnerability Assessment
-- Secure Coding
-- Exploit Analysis
