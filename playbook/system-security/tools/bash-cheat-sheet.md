@@ -4,7 +4,7 @@ A simple reference for common Linux commands and basic Bash scripting.
 
 > This page is for quick reminders, not complete explanations.
 
-# Index
+## Index
 
 - [Navigation](#navigation)
 - [Files and Directories](#files-and-directories)
@@ -40,7 +40,7 @@ A simple reference for common Linux commands and basic Bash scripting.
 - [Core Commands to Remember](#core-commands-to-remember)
 - [Core Scripting Syntax to Recognize](#core-scripting-syntax-to-recognize)
 
-# Navigation
+## Navigation
 
 | Command | What It Does |
 |---|---|
@@ -53,7 +53,7 @@ A simple reference for common Linux commands and basic Bash scripting.
 | `cd ~` | Go to your home directory |
 | `clear` | Clear the terminal |
 
-# Files and Directories
+## Files and Directories
 
 | Command | What It Does |
 |---|---|
@@ -69,7 +69,7 @@ A simple reference for common Linux commands and basic Bash scripting.
 
 > Be careful with `rm`. Deleted files normally do not go to a recycle bin.
 
-# Viewing Files
+## Viewing Files
 
 | Command | What It Does |
 |---|---|
@@ -80,7 +80,7 @@ A simple reference for common Linux commands and basic Bash scripting.
 | `tail -f logfile` | Watch new lines as they are added |
 | `nano file.txt` | Open or create a file in Nano |
 
-# Searching
+## Searching
 
 | Command | What It Does |
 |---|---|
@@ -92,7 +92,7 @@ A simple reference for common Linux commands and basic Bash scripting.
 | `which command` | Show the location of a command |
 | `command -v command` | Check whether a command exists |
 
-# Users and Permissions
+## Users and Permissions
 
 | Command | What It Does |
 |---|---|
@@ -104,7 +104,7 @@ A simple reference for common Linux commands and basic Bash scripting.
 | `chown user file` | Change the owner |
 | `chown user:group file` | Change the owner and group |
 
-# Processes and Services
+## Processes and Services
 
 | Command | What It Does |
 |---|---|
@@ -118,7 +118,7 @@ A simple reference for common Linux commands and basic Bash scripting.
 | `sudo systemctl restart service` | Restart a service |
 | `sudo systemctl enable service` | Start a service automatically at boot |
 
-# Networking
+## Networking
 
 | Command | What It Does |
 |---|---|
@@ -129,9 +129,9 @@ A simple reference for common Linux commands and basic Bash scripting.
 | `wget URL` | Download a file |
 | `hostname` | Show the computer name |
 
-# Packages
+## Packages
 
-## Debian and Ubuntu
+### Debian and Ubuntu
 
 ```bash
 sudo apt update
@@ -139,14 +139,14 @@ sudo apt install package
 sudo apt remove package
 ```
 
-## Red Hat-Based Systems
+### Red Hat-Based Systems
 
 ```bash
 sudo dnf install package
 sudo dnf remove package
 ```
 
-# Compression
+## Compression
 
 These are the main commands worth keeping here:
 
@@ -163,7 +163,7 @@ tar -xzf archive.tar.gz
 - `tar -czf` creates a compressed `.tar.gz` archive.
 - `tar -xzf` extracts a `.tar.gz` archive.
 
-# Redirection and Pipes
+## Redirection and Pipes
 
 | Operator | What It Does |
 |---|---|
@@ -189,7 +189,7 @@ A cleaner version of the last command is:
 grep "ERROR" logfile.txt
 ```
 
-# Command Chaining
+## Command Chaining
 
 | Operator | Meaning |
 |---|---|
@@ -207,7 +207,7 @@ mkdir Logs && cd Logs
 cp file backup/ || echo "Copy failed"
 ```
 
-# Wildcards
+## Wildcards
 
 | Pattern | Meaning |
 |---|---|
@@ -224,7 +224,7 @@ rm file?.log
 ls report[0-9].txt
 ```
 
-# Variables
+## Variables
 
 Create a variable:
 
@@ -251,7 +251,7 @@ Use braces when the variable touches other text:
 echo "${name}_backup"
 ```
 
-# Environment Variables
+## Environment Variables
 
 ```bash
 echo "$HOME"
@@ -265,7 +265,7 @@ Create an environment variable for the current shell:
 export VARIABLE="value"
 ```
 
-# Command Substitution
+## Command Substitution
 
 Store the output of a command:
 
@@ -279,7 +279,7 @@ Use it:
 echo "$current_date"
 ```
 
-# Exit Status
+## Exit Status
 
 Every command returns a number after it finishes.
 
@@ -299,11 +299,11 @@ echo $?
 
 `$?` only contains the exit status of the most recently completed command.
 
-# Tests
+## Tests
 
 Tests return success or failure and are commonly used with `if`.
 
-## String Tests
+### String Tests
 
 | Test | Meaning |
 |---|---|
@@ -312,7 +312,7 @@ Tests return success or failure and are commonly used with `if`.
 | `-z "$a"` | String is empty |
 | `-n "$a"` | String is not empty |
 
-## Number Tests
+### Number Tests
 
 | Test | Meaning |
 |---|---|
@@ -323,7 +323,7 @@ Tests return success or failure and are commonly used with `if`.
 | `-ge` | Greater than or equal |
 | `-le` | Less than or equal |
 
-## File Tests
+### File Tests
 
 | Test | Meaning |
 |---|---|
@@ -348,7 +348,7 @@ Examples:
 [ "$age" -ge 18 ]
 ```
 
-# `[ ]` and `[[ ]]`
+## `[ ]` and `[[ ]]`
 
 Both can evaluate conditions.
 
@@ -375,7 +375,7 @@ Important spacing:
 
 For Bash scripts, `[[ ]]` is usually safer and easier for string comparisons and patterns.
 
-# `if`
+## `if`
 
 Run commands only when a condition succeeds:
 
@@ -386,7 +386,7 @@ then
 fi
 ```
 
-# `if / else`
+## `if / else`
 
 Handle both possible outcomes:
 
@@ -401,7 +401,7 @@ fi
 
 Only one branch runs.
 
-# `if / elif / else`
+## `if / elif / else`
 
 Check several conditions in order:
 
@@ -419,7 +419,7 @@ fi
 
 Bash stops after the first matching condition.
 
-# Commands as Conditions
+## Commands as Conditions
 
 An `if` statement can test a command directly:
 
@@ -434,7 +434,7 @@ fi
 
 The `then` block runs when `cp` returns exit status `0`.
 
-# `case`
+## `case`
 
 Use `case` when one value may match several choices:
 
@@ -460,7 +460,7 @@ esac
 - `*` catches anything that did not match.
 - `esac` ends the statement.
 
-# `select`
+## `select`
 
 Create a numbered menu:
 
@@ -495,9 +495,9 @@ Bash displays:
 
 The selected word is stored in `$choice`.
 
-# Loops
+## Loops
 
-## `for`
+### `for`
 
 Repeat once for each item:
 
@@ -508,7 +508,7 @@ do
 done
 ```
 
-## `while`
+### `while`
 
 Repeat while a condition succeeds:
 
@@ -522,7 +522,7 @@ do
 done
 ```
 
-## Loop Control
+### Loop Control
 
 ```bash
 break
@@ -536,7 +536,7 @@ continue
 
 Skip the rest of the current repetition and begin the next one.
 
-# Arithmetic
+## Arithmetic
 
 ```bash
 count=$((count + 1))
@@ -557,7 +557,7 @@ fi
 
 Inside `(( ))`, variables do not require `$`.
 
-# `exit`
+## `exit`
 
 End the script immediately:
 
@@ -593,7 +593,7 @@ Custom codes can be documented inside the script:
 
 The numbers communicate why the script ended. They do not perform different actions by themselves.
 
-# Script Basics
+## Script Basics
 
 Start a Bash script with:
 
@@ -619,7 +619,7 @@ You can also run it without changing permissions:
 bash script.sh
 ```
 
-# Comments
+## Comments
 
 ```bash
 # This is a comment
@@ -627,7 +627,7 @@ bash script.sh
 
 Comments explain the script and are ignored by Bash.
 
-# Help
+## Help
 
 | Command | What It Does |
 |---|---|
@@ -645,7 +645,7 @@ help cd
 type echo
 ```
 
-# Keyboard Shortcuts
+## Keyboard Shortcuts
 
 | Shortcut | Action |
 |---|---|
@@ -657,7 +657,7 @@ type echo
 | `Ctrl + A` | Move to the beginning of the line |
 | `Ctrl + E` | Move to the end of the line |
 
-# Core Commands to Remember
+## Core Commands to Remember
 
 ```text
 pwd
@@ -685,7 +685,7 @@ echo
 man
 ```
 
-# Core Scripting Syntax to Recognize
+## Core Scripting Syntax to Recognize
 
 ```text
 $?
