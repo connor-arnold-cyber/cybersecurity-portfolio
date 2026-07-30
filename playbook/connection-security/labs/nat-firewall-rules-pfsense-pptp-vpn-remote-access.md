@@ -218,22 +218,20 @@ PPTP was used to demonstrate the remote-access configuration process, but it is 
 
 ### Test NAT Connectivity
 
-```bash
+```cmd
 ping 175.45.176.200
 ping 175.45.176.200 -t
-exit
 ```
 
 ### Scan the Firewall
 
-```bash
+```cmd
 nmap 203.0.113.100
-exit
 ```
 
 ### Open Active Directory Users and Computers
 
-```bash
+```cmd
 dsa.msc
 ```
 
