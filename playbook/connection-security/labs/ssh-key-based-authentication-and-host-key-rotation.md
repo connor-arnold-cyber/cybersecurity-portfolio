@@ -356,7 +356,6 @@ sudo systemctl status ssh --no-pager
 - [SSH (Secure Shell)](../concepts/ssh-secure-shell.md) (coming soon)
 - [Authentication](../concepts/authentication.md)
 - [Key Management](../concepts/key-management.md)
-- [Public and Private Key Encryption](../concepts/public-&-private-key-encryption.md)
 - [Ports and Port Numbers](../concepts/ports-and-port-numbers.md)
 - [OpenSSH](../tools/openssh.md) (coming soon)
 - [Asymmetric Encryption](../../data-security/concepts/asymmetric-encryption.md)
