@@ -30,8 +30,3 @@ Ransomware is one of the most financially damaging cyber threats facing organiza
 - Restrict user permissions.
 - Implement multi-factor authentication.
 - Educate users about phishing.
-
-## Related Labs & Projects
-
-- Incident Response
-- Backup Recovery Testing
