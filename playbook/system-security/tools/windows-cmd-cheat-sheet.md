@@ -4,7 +4,7 @@ A quick-reference guide for commonly used Windows Command Prompt (CMD) commands.
 
 > This is a reference, not a tutorial.
 
-# Navigation
+## Navigation
 
 | Command | Description |
 |----------|-------------|
@@ -15,7 +15,7 @@ A quick-reference guide for commonly used Windows Command Prompt (CMD) commands.
 | `cls` | Clear the screen |
 | `tree` | Display directory structure |
 
-# File & Directory Management
+## File & Directory Management
 
 | Command | Description |
 |----------|-------------|
@@ -30,7 +30,7 @@ A quick-reference guide for commonly used Windows Command Prompt (CMD) commands.
 | `del file` | Delete file |
 | `type file` | Display file contents |
 
-# Searching
+## Searching
 
 | Command | Description |
 |----------|-------------|
@@ -39,7 +39,7 @@ A quick-reference guide for commonly used Windows Command Prompt (CMD) commands.
 | `where program` | Locate executable |
 | `dir /s filename` | Find file recursively |
 
-# Networking
+## Networking
 
 | Command | Description |
 |----------|-------------|
@@ -53,7 +53,7 @@ A quick-reference guide for commonly used Windows Command Prompt (CMD) commands.
 | `nslookup domain` | Query DNS |
 | `netstat -ano` | View network connections and listening ports |
 
-# Processes
+## Processes
 
 | Command | Description |
 |----------|-------------|
@@ -62,7 +62,7 @@ A quick-reference guide for commonly used Windows Command Prompt (CMD) commands.
 | `taskkill /IM process.exe` | End process by name |
 | `start program` | Launch program |
 
-# System Information
+## System Information
 
 | Command | Description |
 |----------|-------------|
@@ -73,7 +73,7 @@ A quick-reference guide for commonly used Windows Command Prompt (CMD) commands.
 | `echo %USERNAME%` | Show current username |
 | `echo %COMPUTERNAME%` | Show computer name |
 
-# Users & Permissions
+## Users & Permissions
 
 | Command | Description |
 |----------|-------------|
@@ -82,7 +82,7 @@ A quick-reference guide for commonly used Windows Command Prompt (CMD) commands.
 | `net localgroup` | List local groups |
 | `net localgroup Administrators` | View Administrators group |
 
-# Environment Variables
+## Environment Variables
 
 | Command | Description |
 |----------|-------------|
@@ -91,7 +91,7 @@ A quick-reference guide for commonly used Windows Command Prompt (CMD) commands.
 | `echo %PATH%` | Display PATH variable |
 | `echo %VARIABLE%` | Display variable value |
 
-# Redirection & Pipes
+## Redirection & Pipes
 
 | Operator | Description |
 |----------|-------------|
@@ -106,7 +106,7 @@ Example:
 ipconfig | findstr IPv4
 ```
 
-# Batch Variables
+## Batch Variables
 
 ```cmd
 set NAME=Connor
@@ -114,7 +114,7 @@ set NAME=Connor
 echo %NAME%
 ```
 
-# Conditional Operators
+## Conditional Operators
 
 | Operator | Meaning |
 |----------|---------|
@@ -128,7 +128,7 @@ Example:
 mkdir Logs && cd Logs
 ```
 
-# Wildcards
+## Wildcards
 
 | Wildcard | Meaning |
 |----------|---------|
@@ -143,7 +143,7 @@ dir *.txt
 del file?.txt
 ```
 
-# Help
+## Help
 
 | Command | Description |
 |----------|-------------|
@@ -160,7 +160,7 @@ ipconfig /?
 tasklist /?
 ```
 
-# Keyboard Shortcuts
+## Keyboard Shortcuts
 
 | Shortcut | Action |
 |----------|--------|
@@ -171,7 +171,7 @@ tasklist /?
 | `Ctrl + C` | Cancel current command |
 | `cls` | Clear screen |
 
-# Core Commands to Memorize
+## Core Commands to Memorize
 
 ```
 cd
