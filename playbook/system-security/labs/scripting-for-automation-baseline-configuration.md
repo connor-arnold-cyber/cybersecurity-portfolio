@@ -204,7 +204,7 @@ cat baseline.sh
 
 ## Related Playbook Pages
 
-- [Bash](../Concepts/bash.md)
+- [Bash Scripting Guide](../tools/bash-scripting-guide.md)
 - [Linux Users and Groups](../Operating-Systems/Linux/linux-users-and-groups.md) *(coming soon)*
 - [Linux File Permissions](../Operating-Systems/Linux/linux-file-permissions.md) *(coming soon)*
 - [System Time Management](../Operating-Systems/Linux/system-time-management.md) *(coming soon)*
