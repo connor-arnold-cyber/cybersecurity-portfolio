@@ -29,8 +29,3 @@ Spyware can capture passwords, financial information, browsing history, and othe
 - Avoid suspicious downloads.
 - Keep browsers updated.
 - Educate users about fake security software.
-
-## Related Labs & Projects
-
-- Malware Detection
-- Endpoint Protection
