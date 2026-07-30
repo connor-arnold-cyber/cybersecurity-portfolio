@@ -55,7 +55,6 @@ Many protocols support authentication, including:
 - RADIUS
 - TACACS+
 - LDAP
-- OAuth
 - OpenID Connect
 
 Each is designed for different environments and authentication needs.
