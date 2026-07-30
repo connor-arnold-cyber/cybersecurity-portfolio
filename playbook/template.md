@@ -9,5 +9,3 @@
 ## Common Uses
 
 ## Best Practices
-
-## Related Labs & Projects
