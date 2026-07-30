@@ -55,8 +55,3 @@ Component security focuses on protecting the individual hardware and software co
 ## Notes
 
 ## References
-
-===== ./component-security/tools/images/placeholder.md =====
-
-
-===== ./component-security/concepts/images/placeholder.md =====
