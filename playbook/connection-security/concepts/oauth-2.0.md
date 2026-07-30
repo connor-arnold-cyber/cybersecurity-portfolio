@@ -85,8 +85,6 @@ OAuth 2.0 allows users to safely authorize third-party applications without expo
 
 ## Common Uses
 
-- "Sign in with Google"
-- "Continue with Microsoft"
 - Cloud storage integrations
 - Social media integrations
 - Mobile applications
