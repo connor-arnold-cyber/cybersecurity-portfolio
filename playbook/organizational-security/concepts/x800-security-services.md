@@ -10,7 +10,7 @@ X.800 is an international security architecture that defines the primary securit
 - Integrity
 - Authentication
 - Non-Repudiation
-- Availability
+- Access Control
 
 ## Why It Matters
 
