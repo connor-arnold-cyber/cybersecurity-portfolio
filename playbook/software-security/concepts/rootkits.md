@@ -29,8 +29,3 @@ Rootkits are extremely difficult to detect and remove because they often modify 
 - Use endpoint detection tools.
 - Monitor system integrity.
 - Reinstall compromised systems when necessary.
-
-## Related Labs & Projects
-
-- Rootkit Detection
-- Incident Response
