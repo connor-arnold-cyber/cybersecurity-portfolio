@@ -158,6 +158,5 @@ The assignment demonstrated that Certificate Authority security is not only abou
 - [Encryption](../concepts/encryption.md)
 - [Asymmetric Encryption](../concepts/asymmetric-encryption.md)
 - [Install and Configure Active Directory Certificate Services](install-and-configure-active-directory-certificate-services.md)
-- [Public Key Cryptography Process](pki-public-key-cryptography-process.md)
 - [Certificate Revocation Lists](../../connection-security/concepts/certificate-revocation-lists-crls.md) (coming soon)
 - [Online Certificate Status Protocol](../../connection-security/concepts/online-certificate-status-protocol-ocsp.md) (coming soon)
