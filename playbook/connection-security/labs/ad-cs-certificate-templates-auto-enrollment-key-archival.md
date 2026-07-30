@@ -272,8 +272,6 @@ echo Connor Arnold - July 29, 2026
 
 ## Related Playbook Pages
 
-### Concepts
-
 - [Active Directory](../../connection-security/concepts/active-directory.md)
 - [Authentication](../../connection-security/concepts/authentication.md)
 - [Certificate Authority](../../connection-security/concepts/certificate-authority.md)
@@ -287,8 +285,3 @@ echo Connor Arnold - July 29, 2026
 - [Certificate Templates](../concepts/certificate-templates.md) (coming soon)
 - [Group Policy Objects](../../system-security/concepts/group-policy-objects.md) (coming soon)
 - [Key Archival and Recovery](../concepts/key-archival-and-recovery.md) (coming soon)
-
-### Labs
-
-- [Install and Configure Active Directory Certificate Services](install-and-configure-active-directory-certificate-services.md)
-- [PKI Public Key Cryptography Process](pki-public-key-cryptography-process.md)
