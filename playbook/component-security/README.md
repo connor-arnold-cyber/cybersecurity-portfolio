@@ -1,30 +1,62 @@
 # Component Security
 
 ## Overview
+Component security focuses on protecting the individual hardware and software components that make up a computer system. A weakness in a single component can compromise the security of the entire system.
 
-Component security focuses on protecting the hardware, firmware, and low-level components that support a computer system. It includes establishing trust during startup, protecting device firmware, and reducing the risk of hardware tampering or compromised components.
-
-## Concepts
-
-- [BIOS and UEFI Security](concepts/bios-uefi-security.md) *(coming soon)*
-- [Device Driver Security](concepts/device-driver-security.md) *(coming soon)*
-- [Firmware Security](concepts/firmware-security.md) *(coming soon)*
-- [Hardware Security](concepts/hardware-security.md) *(coming soon)*
-- [Hardware Supply Chain Security](concepts/hardware-supply-chain-security.md) *(coming soon)*
-- [Hardware Tampering](concepts/hardware-tampering.md) *(coming soon)*
-- [Secure Boot](concepts/secure-boot.md) *(coming soon)*
-- [Trusted Platform Module](concepts/trusted-platform-module.md) *(coming soon)*
+## Core Concepts
+- Operating Systems
+- Hardware Security
+- Firmware
+- BIOS / UEFI
+- Trusted Platform Module (TPM)
+- Secure Boot
+- Device Drivers
+- Endpoint Security
+- Virtualization
+- System Hardening
 
 ## Tools
+- Windows Security
+- Microsoft Defender
+- BitLocker
+- TPM Management
+- Device Manager
+- BIOS / UEFI Configuration
+- Hyper-V
+- VMware
+- VirtualBox
 
-- [BIOS and UEFI Configuration](tools/bios-uefi-configuration.md) *(coming soon)*
-- [TPM Management](tools/tpm-management.md) *(coming soon)*
+## Common Threats
+- Malware
+- Rootkits
+- Firmware Attacks
+- Driver Exploits
+- Bootkits
+- Hardware Tampering
+- Unpatched Systems
+- Misconfigurations
 
-## Labs
+## Best Practices
+- Keep operating systems and firmware updated.
+- Enable Secure Boot and TPM when available.
+- Apply security patches promptly.
+- Remove unnecessary software and services.
+- Use least privilege.
+- Encrypt sensitive data.
+- Harden endpoints using security baselines.
 
-- [BIOS and UEFI Hardening](labs/bios-uefi-hardening.md) *(coming soon)*
-- [Secure Boot and TPM Configuration](labs/secure-boot-and-tpm-configuration.md) *(coming soon)*
+## Labs & Projects
+- Windows Hardening
+- Linux Hardening
+- Virtual Machine Configuration
+- Endpoint Security Labs
+- Hardware Security Labs
 
-## Projects
+## Notes
 
-- Coming soon.
+## References
+
+===== ./component-security/tools/images/placeholder.md =====
+
+
+===== ./component-security/concepts/images/placeholder.md =====
