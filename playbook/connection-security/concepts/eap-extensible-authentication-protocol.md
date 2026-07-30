@@ -82,5 +82,5 @@ EAP allows organizations to use strong, flexible authentication methods without 
 - Prefer certificate-based methods such as EAP-TLS when possible.
 - Avoid weak or legacy authentication methods.
 - Protect authentication servers with strong security controls.
-- Use HTTPS and secure certificate management where applicable.
+- Validate the authentication server certificate and trust only the intended CA and server identity.
 - Combine EAP with Multi-Factor Authentication (MFA) when supported.
