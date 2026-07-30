@@ -29,9 +29,3 @@ Backdoors allow attackers to return to compromised systems without exploiting th
 - Monitor outbound connections.
 - Perform integrity checks after incidents.
 - Reimage compromised systems when appropriate.
-
-## Related Labs & Projects
-
-- Malware Analysis
-- Incident Response
-- Endpoint Detection
