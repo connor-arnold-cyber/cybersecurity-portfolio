@@ -39,7 +39,6 @@ The user's password is not shared with the Service Provider.
 Common protocols used for federated identity include:
 
 - SAML
-- OAuth 2.0
 - OpenID Connect (OIDC)
 
 These standards allow organizations to securely exchange authentication information.
@@ -51,7 +50,7 @@ These standards allow organizations to securely exchange authentication informat
 | Works across trusted organizations | Typically works within one organization |
 | Shares identity between organizations | Shares authentication between applications |
 | Requires trust relationships | Requires a central Identity Provider |
-| Often uses SAML or OpenID Connect | Often uses SAML, OAuth, or OpenID Connect |
+| Often uses SAML or OpenID Connect | Often uses SAML, or OpenID Connect |
 
 Federated identity and SSO are often used together, but they solve different problems.
 
