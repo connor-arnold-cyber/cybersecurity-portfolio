@@ -36,9 +36,9 @@ Example:
 | Permissive | Violations are logged but not blocked. |
 | Disabled | SELinux is turned off. |
 
-# Checking SELinux
+## Checking SELinux
 
-## Check overall status
+### Check overall status
 
 ```bash
 sestatus
@@ -51,7 +51,7 @@ Displays:
 - Config file mode
 - Loaded policy
 
-## Quick mode check
+### Quick mode check
 
 ```bash
 getenforce
@@ -63,7 +63,7 @@ Returns:
 - Permissive
 - Disabled
 
-## Switch modes (temporary)
+### Switch modes (temporary)
 
 Enable enforcing:
 
@@ -79,7 +79,7 @@ sudo setenforce 0
 
 Changes last until reboot.
 
-# Viewing Security Contexts
+## Viewing Security Contexts
 
 View file labels:
 
@@ -107,7 +107,7 @@ ps auxZ
 
 Shows which SELinux domain each process is running under.
 
-# Managing Contexts
+## Managing Contexts
 
 Temporarily change a context:
 
@@ -166,7 +166,7 @@ Disable:
 sudo setsebool -P httpd_enable_homedirs off
 ```
 
-# Managing Ports
+## Managing Ports
 
 List all managed ports:
 
@@ -198,7 +198,7 @@ Modify a port:
 sudo semanage port -m -t http_port_t -p tcp 8080
 ```
 
-# Troubleshooting
+## Troubleshooting
 
 View recent AVC denials:
 
@@ -212,7 +212,7 @@ Generate policy suggestions:
 audit2allow
 ```
 
-# Common Workflow
+## Common Workflow
 
 1. Check SELinux status.
 2. Confirm current mode.
@@ -221,7 +221,7 @@ audit2allow
 5. Correct labels or policies.
 6. Test again.
 
-# Best Practices
+## Best Practices
 
 - Leave SELinux in Enforcing mode.
 - Prefer restorecon over chcon for permanent fixes.
@@ -229,7 +229,7 @@ audit2allow
 - Use least privilege.
 - Keep labels consistent.
 
-# Memorize
+## Memorize
 
 Commands:
 
@@ -253,7 +253,7 @@ Concepts:
 - Policy
 - AVC Denial
 
-# Related Concepts
+## Related Concepts
 
 - Linux Permissions (DAC)
 - AppArmor
